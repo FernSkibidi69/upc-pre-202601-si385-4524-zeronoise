@@ -1,0 +1,90 @@
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid #5dade2;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+hr {
+  border: 2px solid #aed6f1;
+  margin: 30px auto;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .Menu-Horizontal {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .Menu-Horizontal li a {
+    display: block;
+    padding: 8px;
+  }
+
+  .principal {
+    height: 500px;
+    padding: 20px;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .texto-principal {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .texto-principal h2 {
+    font-size: 22px;
+  }
+
+  .texto-principal p {
+    font-size: 14px;
+  }
+
+  .funciones,
+  .estadisticas,
+  .mapa,
+  .reporte,
+  .Herramientas,
+  .Beneficios,
+  .descargar,
+  .contacto {
+    padding: 20px;
+    margin: 20px 15px;
+  }
+
+  .funciones h2,
+  .estadisticas h2,
+  .mapa h2,
+  .reporte h2,
+  .Herramientas h2,
+  .Beneficios h2,
+  .descargar h2,
+  .contacto h2 {
+    font-size: 1.5em;
+  }
+
+  .lista-beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  hr {
+    width: 90%;
+  }
+}

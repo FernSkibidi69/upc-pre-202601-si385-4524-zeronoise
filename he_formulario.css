@@ -1,0 +1,102 @@
+.reporte-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.reporte-formulario {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.campo-reporte {
+  background-color: #ebf5fb;
+  padding: 15px;
+  border: 1px solid #aed6f1;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.campo-reporte label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a5276;
+}
+
+.campo-reporte input[type="text"],
+.campo-reporte select,
+.campo-reporte textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aed6f1;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.campo-reporte textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn-reportar {
+  background-color: #5dade2;
+  color: #ffffff;
+  border: 1.5px solid #3498db;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn-reportar:hover {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.reportes-recientes {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.reportes-recientes h3 {
+  color: #1a5276;
+  margin-top: 0;
+  border-bottom: 2px solid #5dade2;
+  padding-bottom: 10px;
+}
+
+.reporte-item {
+  background-color: #ebf5fb;
+  padding: 10px;
+  border: 1px solid #aed6f1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.reporte-item p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.reporte-item small {
+  color: #2c3e50;
+}
+
+.estado-pendiente {
+  color: #ec7063;
+  font-weight: bold;
+}
+
+.estado-atendido {
+  color: #82e0aa;
+  font-weight: bold;
+}

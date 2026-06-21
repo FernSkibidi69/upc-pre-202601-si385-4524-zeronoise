@@ -1,0 +1,104 @@
+.mapa-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.mapa-visual {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 300px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.zona-verde {
+  background-color: #82e0aa;
+  color: #1a5276;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.zona-amarilla {
+  background-color: #f9e79f;
+  color: #1a5276;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.zona-naranja {
+  background-color: #f5b041;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.zona-roja {
+  background-color: #ec7063;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.leyenda-mapa {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+}
+
+.leyenda-item {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+}
+
+.color-verde {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #82e0aa;
+  border: 1px solid #1a5276;
+}
+
+.color-amarillo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #f9e79f;
+  border: 1px solid #1a5276;
+}
+
+.color-naranja {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #f5b041;
+  border: 1px solid #1a5276;
+}
+
+.color-rojo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ec7063;
+  border: 1px solid #1a5276;
+}

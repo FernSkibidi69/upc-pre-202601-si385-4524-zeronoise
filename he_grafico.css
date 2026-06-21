@@ -1,0 +1,115 @@
+.grid-estadisticas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-estadistica {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+}
+
+.numero-estadistica {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #1a5276;
+}
+
+.etiqueta-estadistica {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.grafico-container {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #ebf5fb;
+  border: 2px solid #aed6f1;
+  border-radius: 10px;
+}
+
+.grafico-barras {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  min-height: 150px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.barra {
+  width: 45px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 5px 5px 0 0;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #1a5276;
+  transition: height 0.3s ease;
+}
+
+/* ===== CLASES PARA EL GRÁFICO CORREGIDO ===== */
+
+.grafico-titulo {
+  text-align: center;
+  font-weight: bold;
+  color: #1a5276;
+  margin-bottom: 15px;
+}
+
+.barra-baja {
+  height: 60px;
+  background-color: #82e0aa;
+}
+.barra-moderada {
+  height: 80px;
+  background-color: #f9e79f;
+}
+.barra-alta {
+  height: 70px;
+  background-color: #f5b041;
+}
+.barra-critica {
+  height: 95px;
+  background-color: #ec7063;
+}
+
+.leyenda-grafico {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #2c3e50;
+}
+
+.leyenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 10px;
+}
+
+.cuadro-leyenda {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.cuadro-bajo {
+  background-color: #82e0aa;
+}
+.cuadro-moderado {
+  background-color: #f9e79f;
+}
+.cuadro-alto {
+  background-color: #f5b041;
+}
+.cuadro-critico {
+  background-color: #ec7063;
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>NoiseGuard</title>
+    <link rel="stylesheet" href="he_cabecera.css" />
+    <link rel="stylesheet" href="he_seccion.css" />
+    <link rel="stylesheet" href="he_formulario.css" />
+    <link rel="stylesheet" href="he_footer.css" />
+    <link rel="stylesheet" href="he_grafico.css" />
+    <link rel="stylesheet" href="he_mapa.css" />
+    <link rel="stylesheet" href="he_simulador.css" />
+    <link rel="stylesheet" href="he_alertas.css" />
+  </head>
+  <body>
+    <nav class="top-header">
+      <a href="#inicio" class="logo">
+        <img src="NoiseGuard.png" width="220" alt="Logo NoiseGuard" />
+      </a>
+      <ul class="Menu-Horizontal">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#mapa">Mapa de ruido</a></li>
+        <li><a href="#estadisticas">Estadisticas</a></li>
+        <li><a href="#alertas">Alertas</a></li>
+        <li><a href="#reportes">Reportes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#descargar">Descargar App</a></li>
+      </ul>
+    </nav>
+
+    <section id="inicio" class="principal">
+      <div class="texto-principal">
+        <h2>MONITOREA EL RUIDO DE TU ENTORNO EN TIEMPO REAL</h2>
+        <p>
+          NoiseGuard te permite conocer los niveles de ruido. Recibir alertas y
+          reportar incidencias a la municipalidad
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="funciones" class="funciones">
+      <h2>Funciones principales</h2>
+      <div class="grid-funciones">
+        <div class="card-funcion">
+          <div class="icono-funcion"></div>
+          <h3>Medicion de tiempo real</h3>
+          <p>Mide el nivel de ruido en db con tu dispositivo movil</p>
+        </div>
+        <div class="card-funcion">
+          <div class="icono-funcion"></div>
+          <h3>Alertas inteligentes</h3>
+          <p>
+            Recibe notificaciones cuando el ruido supere los limites
+            recomendados
+          </p>
+        </div>
+        <div class="card-funcion">
+          <div class="icono-funcion"></div>
+          <h3>Mapa de calor</h3>
+          <p>
+            Visualiza las zonas mas ruidosas de tu ciudad en un mapa interactivo
+          </p>
+        </div>
+        <div class="card-funcion">
+          <div class="icono-funcion"></div>
+          <h3>Reporte ciudadano</h3>
+          <p>Reporta incidencias de ruido directamente a tu municipalidad</p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="simulador" class="simulador">
+      <h2>Simulador de Medicion de Ruido</h2>
+      <div class="simulador-container">
+        <div class="medidor-wrapper">
+          <div class="medidor-visual">
+            <div class="medidor-barra">
+              <div class="medidor-nivel medidor-estatico"></div>
+            </div>
+            <div class="medidor-valor">42 dB</div>
+            <div class="medidor-estado">Tranquilo</div>
+          </div>
+          <div class="medidor-controles">
+            <button class="btn-medir">Iniciar Medicion</button>
+            <button class="btn-medir btn-stop">Detener</button>
+            <div class="medidor-historial">
+              <p><strong>Ultimas mediciones:</strong></p>
+              <ul>
+                <li>42 dB</li>
+                <li>38 dB</li>
+                <li>45 dB</li>
+                <li>51 dB</li>
+                <li>39 dB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="medidor-info">
+          <div class="info-card">
+            <h4>Escala de Ruido</h4>
+            <ul>
+              <li><span class="color-silencio">●</span> 0-40 dB: Silencio</li>
+              <li>
+                <span class="color-conversacion">●</span> 41-60 dB: Conversacion
+              </li>
+              <li><span class="color-trafico">●</span> 61-80 dB: Trafico</li>
+              <li><span class="color-peligro">●</span> 81-100 dB: Peligroso</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4>Consejo</h4>
+            <p>
+              Mantén tu entorno por debajo de 55 dB para un descanso óptimo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="alertas" class="alertas">
+      <h2>Sistema de Alertas</h2>
+      <div class="alertas-container">
+        <div class="configuracion-alertas">
+          <h3>Configura tus alertas</h3>
+          <div class="campo-alerta">
+            <label>Umbral de decibelios</label>
+            <div class="umbral-control">
+              <input type="range" min="40" max="90" value="70" disabled />
+              <span>70 dB</span>
+            </div>
+          </div>
+          <div class="campo-alerta">
+            <label>Horario de alertas</label>
+            <div class="horario-control">
+              <input type="time" value="08:00" disabled />
+              <span>a</span>
+              <input type="time" value="22:00" disabled />
+            </div>
+          </div>
+          <div class="campo-alerta">
+            <label>Tipo de notificacion</label>
+            <select disabled>
+              <option selected>Todos</option>
+              <option>Push Notification</option>
+              <option>Email</option>
+              <option>SMS</option>
+            </select>
+          </div>
+          <div class="campo-alerta">
+            <label>
+              <input type="checkbox" checked disabled />
+              Activar alertas
+            </label>
+          </div>
+          <button class="btn-guardar" disabled>Guardar configuracion</button>
+        </div>
+        <div class="alertas-activas">
+          <h3>Alertas activas</h3>
+          <div class="alerta-item">
+            <div class="alerta-icono">[!]</div>
+            <div class="alerta-info">
+              <p class="alerta-titulo">Nivel de ruido elevado</p>
+              <p class="alerta-descripcion">
+                Se ha superado el umbral de <strong>70 dB</strong>
+              </p>
+              <p class="alerta-hora">
+                Ultima alerta: <span>Hoy a las 14:30</span>
+              </p>
+            </div>
+            <div class="alerta-estado">
+              <span class="estado-activo">Activo</span>
+            </div>
+          </div>
+          <div class="historial-alertas">
+            <h4>Historial de alertas</h4>
+            <ul>
+              <li>Umbral superado: 70 dB a las 14:30</li>
+              <li>Umbral superado: 72 dB a las 12:15</li>
+              <li>Umbral superado: 68 dB a las 10:00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="mapa" class="mapa">
+      <h2>Mapa de Ruido</h2>
+      <div class="mapa-container">
+        <div class="mapa-visual">
+          <div class="zona-verde">Zona Tranquila</div>
+          <div class="zona-amarilla">Zona Moderada</div>
+          <div class="zona-naranja">Zona Ruidosa</div>
+          <div class="zona-roja">Zona Critica</div>
+        </div>
+        <div class="leyenda-mapa">
+          <div class="leyenda-item">
+            <span class="color-verde"></span> ≤ 55 dB (Tranquilo)
+          </div>
+          <div class="leyenda-item">
+            <span class="color-amarillo"></span> 56-70 dB (Moderado)
+          </div>
+          <div class="leyenda-item">
+            <span class="color-naranja"></span> 71-85 dB (Ruidoso)
+          </div>
+          <div class="leyenda-item">
+            <span class="color-rojo"></span> ≥ 86 dB (Critico)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="estadisticas" class="estadisticas">
+      <h2>Historial y estadisticas</h2>
+      <div class="grid-estadisticas">
+        <div class="card-estadistica">
+          <div class="numero-estadistica">72</div>
+          <div class="etiqueta-estadistica">dB Promedio</div>
+        </div>
+        <div class="card-estadistica">
+          <div class="numero-estadistica">15</div>
+          <div class="etiqueta-estadistica">Reportes enviados</div>
+        </div>
+        <div class="card-estadistica">
+          <div class="numero-estadistica">8</div>
+          <div class="etiqueta-estadistica">Zonas criticas</div>
+        </div>
+        <div class="card-estadistica">
+          <div class="numero-estadistica">92%</div>
+          <div class="etiqueta-estadistica">Tasa de respuesta</div>
+        </div>
+      </div>
+      <div class="grafico-container">
+        <p class="grafico-titulo">Niveles de ruido por dia (dB)</p>
+        <div class="grafico-barras">
+          <div class="barra barra-baja">Lun</div>
+          <div class="barra barra-moderada">Mar</div>
+          <div class="barra barra-baja">Mie</div>
+          <div class="barra barra-critica">Jue</div>
+          <div class="barra barra-alta">Vie</div>
+          <div class="barra barra-baja">Sab</div>
+          <div class="barra barra-baja">Dom</div>
+        </div>
+        <div class="leyenda-grafico">
+          <span class="leyenda-item">
+            <span class="cuadro-leyenda cuadro-bajo"></span> Bajo (≤55 dB)
+          </span>
+          <span class="leyenda-item">
+            <span class="cuadro-leyenda cuadro-moderado"></span> Moderado (56-70
+            dB)
+          </span>
+          <span class="leyenda-item">
+            <span class="cuadro-leyenda cuadro-alto"></span> Alto (71-85 dB)
+          </span>
+          <span class="leyenda-item">
+            <span class="cuadro-leyenda cuadro-critico"></span> Critico (>85 dB)
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="reportes" class="reporte">
+      <h2>Reporte ciudadanos</h2>
+      <div class="reporte-container">
+        <div class="reporte-formulario">
+          <div class="campo-reporte">
+            <label>Ubicacion</label>
+            <input type="text" placeholder="Ingresa tu direccion" />
+          </div>
+          <div class="campo-reporte">
+            <label>Nivel de ruido</label>
+            <select>
+              <option>Bajo (≤ 55 dB)</option>
+              <option selected>Moderado (56-70 dB)</option>
+              <option>Alto (71-85 dB)</option>
+              <option>Muy Alto (≥ 86 dB)</option>
+            </select>
+          </div>
+          <div class="campo-reporte">
+            <label>Descripcion</label>
+            <textarea
+              placeholder="Describe la situacion de ruido..."
+            ></textarea>
+          </div>
+          <button class="btn-reportar">Enviar Reporte</button>
+        </div>
+        <div class="reportes-recientes">
+          <h3>Reportes recientes</h3>
+          <div class="reporte-item">
+            <span class="estado-pendiente"> ● Pendiente</span>
+            <p>Zona comercial - 78 dB</p>
+            <small>Hace 15 minutos</small>
+          </div>
+          <div class="reporte-item">
+            <span class="estado-atendido"> ● Atendido</span>
+            <p>Avenida principal - 65 dB</p>
+            <small>Hace 2 horas</small>
+          </div>
+          <div class="reporte-item">
+            <span class="estado-pendiente"> ● Pendiente</span>
+            <p>Parque central - 82 dB</p>
+            <small>Hace 4 horas</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="herramientas" class="Herramientas">
+      <h2>Herramientas para municipales</h2>
+      <div class="grid-herramientas">
+        <div class="card-herramienta">
+          <h3>Dashboard de gestion</h3>
+          <p>
+            Visualiza en tiempo real las zonas con mayor contaminacion sonora
+          </p>
+        </div>
+        <div class="card-herramienta">
+          <h3>App de fiscalizacion</h3>
+          <p>Herramienta movil para inspectores municipales</p>
+        </div>
+        <div class="card-herramienta">
+          <h3>Reportes ejecutivos</h3>
+          <p>Genera informes automaticos para la toma de decisiones</p>
+        </div>
+        <div class="card-herramienta">
+          <h3>Alertas prioritarias</h3>
+          <p>Recibe notificaciones de incidentes criticos en tu distrito</p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="beneficios" class="Beneficios">
+      <h2>Beneficios</h2>
+      <ul class="lista-beneficios">
+        <li>Mejora tu calidad de vida y bienestar</li>
+        <li>Reduce el estres y mejora tu descanso</li>
+        <li>Contribuye a ciudades mas saludables</li>
+        <li>Participa activamente en tu comunidad</li>
+        <li>Datos confiables para tomar decisiones</li>
+        <li>Conexion directa con autoridades locales</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section id="descargar" class="descargar">
+      <h2>Empieza a monitorear el ruido hoy</h2>
+      <p>Descarga NoiseGuard y protege tu bienestar sonoro.</p>
+      <div class="botones-descarga">
+        <a href="#" class="btn-descarga">App Store</a>
+        <a href="#" class="btn-descarga">Google Play</a>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <div class="contacto-container">
+        <div class="info-contacto">
+          <p>info@noiseguard.com</p>
+          <p>(01) 555-1234</p>
+          <p>Lima, Peru</p>
+        </div>
+        <div class="redes-sociales">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <footer class="footer">
+      <p>© 2026 Zero Noise - NoiseGuard. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

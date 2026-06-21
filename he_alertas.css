@@ -1,0 +1,257 @@
+.alertas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.configuracion-alertas {
+  background: #d4e6f1;
+  padding: 25px;
+  border: 2px solid #85c1e9;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.configuracion-alertas h3 {
+  color: #1a5276;
+  margin-top: 0;
+  border-bottom: 2px solid #5dade2;
+  padding-bottom: 10px;
+}
+
+.campo-alerta {
+  margin: 15px 0;
+  padding: 15px;
+  background: #ebf5fb;
+  border-radius: 8px;
+  border: 1px solid #aed6f1;
+}
+
+.campo-alerta label {
+  display: block;
+  font-weight: bold;
+  color: #1a5276;
+  margin-bottom: 8px;
+}
+
+.umbral-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.umbral-control input[type="range"] {
+  flex: 1;
+  height: 8px;
+  -webkit-appearance: none;
+  background: #bdc3c7;
+  border-radius: 4px;
+  outline: none;
+}
+
+.umbral-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #5dade2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#valorUmbral {
+  font-weight: bold;
+  color: #1a5276;
+  min-width: 50px;
+}
+
+.horario-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.horario-control input[type="time"] {
+  padding: 8px;
+  border: 1px solid #aed6f1;
+  border-radius: 5px;
+  background: white;
+}
+
+.campo-alerta select {
+  padding: 10px;
+  border: 1px solid #aed6f1;
+  border-radius: 5px;
+  width: 100%;
+  background: white;
+}
+
+.btn-guardar {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-guardar:hover {
+  background: #2ecc71;
+  transform: scale(1.02);
+}
+
+.alertas-activas {
+  background: #d4e6f1;
+  padding: 25px;
+  border: 2px solid #85c1e9;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.alertas-activas h3 {
+  color: #1a5276;
+  margin-top: 0;
+  border-bottom: 2px solid #5dade2;
+  padding-bottom: 10px;
+}
+
+.alerta-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #f39c12;
+  transition: border-left-color 0.3s ease;
+}
+
+@keyframes parpadeo {
+  0%,
+  100% {
+    border-left-color: #f39c12;
+  }
+  50% {
+    border-left-color: #e74c3c;
+  }
+}
+
+.alerta-icono {
+  font-size: 2em;
+}
+
+.alerta-info {
+  flex: 1;
+}
+
+.alerta-titulo {
+  font-weight: bold;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.alerta-descripcion {
+  margin: 5px 0;
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.alerta-hora {
+  margin: 5px 0;
+  font-size: 0.8em;
+  color: #95a5a6;
+}
+
+.alerta-estado {
+  text-align: right;
+}
+
+.estado-activo {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.estado-inactivo {
+  color: #ec7063;
+  font-weight: bold;
+}
+
+.historial-alertas {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.historial-alertas h4 {
+  color: #1a5276;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 8px;
+}
+
+.historial-alertas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.historial-alertas li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 0.9em;
+  color: #2c3e50;
+}
+
+.historial-alertas li:last-child {
+  border-bottom: none;
+}
+
+.mensaje-confirmacion {
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  background: #d5f5e3;
+  border-radius: 5px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .alertas-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .configuracion-alertas,
+  .alertas-activas {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .umbral-control {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .horario-control {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.sin-alertas {
+  color: #7f8c8d;
+}
