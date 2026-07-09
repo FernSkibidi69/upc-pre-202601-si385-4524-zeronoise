@@ -1,0 +1,206 @@
+.principal {
+  background-image: url("inicio.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+
+.texto-principal h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.texto-principal p {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.funciones h2,
+.estadisticas h2,
+.mapa h2,
+.reporte h2,
+.Herramientas h2,
+.Beneficios h2,
+.descargar h2,
+.contacto h2 {
+  color: #1a5276;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #5dade2;
+}
+
+.grid-funciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-funcion {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.icono-funcion {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.card-funcion h3 {
+  color: #1a5276;
+  margin: 10px 0;
+}
+
+.card-funcion p {
+  color: #2c3e50;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.grid-herramientas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-herramienta {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.card-herramienta h3 {
+  color: #1a5276;
+  margin: 0 0 10px 0;
+}
+
+.card-herramienta p {
+  color: #2c3e50;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.lista-beneficios {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background-color: #d4e6f1;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lista-beneficios li {
+  padding: 10px;
+  background-color: #ebf5fb;
+  border: 1px solid #aed6f1;
+  border-radius: 5px;
+  color: #1a5276;
+  font-weight: bold;
+}
+
+.descargar {
+  text-align: center;
+  background-color: #ebf5fb;
+}
+
+.descargar h2 {
+  color: #1a5276;
+}
+
+.descargar p {
+  color: #2c3e50;
+  font-size: 1.1em;
+}
+
+.botones-descarga {
+  margin-top: 20px;
+}
+
+.btn-descarga {
+  background-color: #5dade2;
+  color: #ffffff;
+  border: 1.5px solid #3498db;
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.btn-descarga:hover {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.contacto h2 {
+  color: #1a5276;
+}
+
+.contacto-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-contacto {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.info-contacto p {
+  margin: 10px 0;
+  color: #1a5276;
+  font-weight: bold;
+}
+
+.redes-sociales {
+  background-color: #d4e6f1;
+  padding: 20px;
+  border: 1.5px solid #85c1e9;
+  border-radius: 8px;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.redes-sociales a {
+  background-color: #ebf5fb;
+  color: #1a5276;
+  border: 1.5px solid #aed6f1;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redes-sociales a:hover {
+  background-color: #5dade2;
+  color: #ffffff;
+}
