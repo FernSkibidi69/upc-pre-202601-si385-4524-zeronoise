@@ -11,7 +11,7 @@ Contreras Panuera, Fernando Fabrizio U202418623
 Meza Tena, Maria José U202417512
 Sánchez Cuzcano, Mauricio Joaquin U202419277
 Trujillo Lazaro, Cristian Briham  U20241G254
-Vidal Guillen, Enrique U202417701
+Vidal Guillen, Enrique UU202417701
 
 Segmentos Objetivo
 - Empresas tecnológicas: Compañías que buscan optimizar sus procesos digitales
@@ -25,7 +25,7 @@ Características Principales
 -  Integración con redes sociales
 -  Menú de navegación con scroll suave
 -  Efectos visuales con CSS y JavaScript
--  Optimización para SEO básico
+-  Optimización para SEO básicos
 
  Tecnologías Utilizadas
 - HTML5 - Estructura del sitio
