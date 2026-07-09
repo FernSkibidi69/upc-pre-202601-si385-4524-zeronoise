@@ -29,7 +29,7 @@ Características Principales
 
  Tecnologías Utilizadas
 - HTML5 - Estructura del sitio
-- CSS3 - Estilos y diseño responsive
+- CSS3 - Estilos y el diseño responsive
 - JavaScript (Vanilla JS)** - Interactividad
 - jQuery - Funcionalidades adicionales
 - Google Fonts - Tipografías personalizadas
