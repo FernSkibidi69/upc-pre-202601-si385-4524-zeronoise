@@ -1,0 +1,80 @@
+.sec-tutorial {
+  background-color: #f4f8fb;
+  padding: 70px 40px;
+}
+
+.div-gral-tutorial {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutorial-texto {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.tutorial-texto h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.tutorial-texto p {
+  color: #34495e;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.tutorial-pasos {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.tutorial-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tutorial-card span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a5276;
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tutorial-card h3 {
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.tutorial-card p {
+  color: #4b5563;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .sec-tutorial {
+    padding: 50px 25px;
+  }
+
+  .tutorial-pasos {
+    flex-direction: column;
+  }
+
+  .tutorial-texto h2 {
+    font-size: 1.7rem;
+  }
+}
