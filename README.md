@@ -25,7 +25,7 @@ Características Principales
 -  Integración con redes sociales
 -  Menú de navegación con scroll suave
 -  Efectos visuales con CSS y JavaScript
--  Optimización para SEO básicos
+-  Optimización para SEO básico
 
  Tecnologías Utilizadas
 - HTML5 - Estructura del sitio
