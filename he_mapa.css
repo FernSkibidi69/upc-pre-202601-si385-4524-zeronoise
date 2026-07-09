@@ -1,104 +1,410 @@
-.mapa-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 800px;
+/* ========================= */
+/* SECCIÓN GENERAL DEL MAPA */
+/* ========================= */
+
+.sec-mapa {
+  background-color: #ffffff;
+  padding: 70px 40px;
 }
+
+.div-gral-mapa {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mapa-texto {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.mapa-texto h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.mapa-texto p {
+  color: #34495e;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contenedor principal: mapa a la izquierda y panel de información a la derecha */
+
+.mapa-contenido {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ========================= */
+/* MAPA VISUAL SIMULADO */
+/* ========================= */
+/* Este bloque representa el mapa colaborativo con zonas de ruido */
 
 .mapa-visual {
-  background-color: #d4e6f1;
-  padding: 20px;
-  border: 1.5px solid #85c1e9;
-  border-radius: 8px;
-  width: 300px;
-  height: 200px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  flex: 2;
+  height: 420px;
+  background-color: #eaf2f8;
+  border: 3px solid #d6eaf8;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
 }
 
-.zona-verde {
-  background-color: #82e0aa;
-  color: #1a5276;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-}
+/* Zonas circulares del mapa */
 
-.zona-amarilla {
-  background-color: #f9e79f;
-  color: #1a5276;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.zona-naranja {
-  background-color: #f5b041;
-  color: #ffffff;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.zona-roja {
-  background-color: #ec7063;
-  color: #ffffff;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.leyenda-mapa {
-  background-color: #d4e6f1;
-  padding: 20px;
-  border: 1.5px solid #85c1e9;
-  border-radius: 8px;
-}
-
-.leyenda-item {
-  margin: 10px 0;
+.zona {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.85;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #2c3e50;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
 }
 
-.color-verde {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #82e0aa;
-  border: 1px solid #1a5276;
+.zona span {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.85rem;
 }
 
-.color-amarillo {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #f9e79f;
-  border: 1px solid #1a5276;
+.zona-tranquila {
+  width: 180px;
+  height: 180px;
+  background-color: #27ae60;
+  top: 40px;
+  left: 50px;
 }
 
-.color-naranja {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #f5b041;
-  border: 1px solid #1a5276;
+.zona-moderada {
+  width: 200px;
+  height: 200px;
+  background-color: #f1c40f;
+  top: 150px;
+  left: 230px;
 }
 
-.color-rojo {
+.zona-ruidosa {
+  width: 190px;
+  height: 190px;
+  background-color: #e67e22;
+  top: 55px;
+  right: 160px;
+}
+
+.zona-critica {
+  width: 210px;
+  height: 210px;
+  background-color: #c0392b;
+  bottom: 35px;
+  right: 45px;
+}
+
+/* Puntos azules del mapa: representan reportes ciudadanos */
+
+.punto-reporte {
+  width: 18px;
+  height: 18px;
+  background-color: #1a5276;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 0 4px rgba(26, 82, 118, 0.25);
+}
+
+.punto-uno {
+  top: 110px;
+  left: 300px;
+}
+
+.punto-dos {
+  top: 250px;
+  right: 190px;
+}
+
+.punto-tres {
+  bottom: 110px;
+  left: 120px;
+}
+
+/* ========================= */
+/* PANEL DE DETALLE DEL MAPA */
+/* ========================= */
+/* Este panel muestra el detalle del reporte seleccionado */
+
+.detalle-mapa {
+  flex: 1;
+  background-color: #f4f8fb;
+  padding: 28px;
+  border-radius: 14px;
+  border: 2px solid #d6eaf8;
+}
+
+.detalle-mapa h3 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.detalle-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #c0392b;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.detalle-card h4 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.detalle-card p {
+  color: #34495e;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* ========================= */
+/* LEYENDA DEL MAPA */
+/* ========================= */
+/* Explica qué significa cada color del mapa */
+
+.leyenda-mapa {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.leyenda-mapa h4 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.leyenda-mapa p {
+  color: #34495e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 9px 0;
+}
+
+.color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #ec7063;
-  border: 1px solid #1a5276;
+}
+
+.color.bajo {
+  background-color: #27ae60;
+}
+
+.color.moderado {
+  background-color: #f1c40f;
+}
+
+.color.alto {
+  background-color: #e67e22;
+}
+
+.color.critico {
+  background-color: #c0392b;
+}
+
+/* ========================= */
+/* ZONAS SILENCIOSAS */
+/* ========================= */
+/* Recomendaciones de zonas con menor exposición al ruido */
+
+.zonas-silenciosas {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.zonas-silenciosas h4 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.zona-recomendada {
+  background-color: #ebf5fb;
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 5px solid #27ae60;
+  margin-bottom: 12px;
+}
+
+.zona-recomendada:last-child {
+  margin-bottom: 0;
+}
+
+.zona-recomendada h5 {
+  color: #1a5276;
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.zona-recomendada p {
+  color: #34495e;
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+.zona-recomendada span {
+  color: #566573;
+  font-size: 0.9rem;
+}
+
+/* ========================= */
+/* MAPA DE CALOR POR HORARIO */
+/* ========================= */
+/* Muestra cómo cambia el ruido según la hora del día */
+
+.mapa-horario {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.mapa-horario h4 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.mapa-horario p {
+  color: #34495e;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.horario-opciones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.horario-opciones span {
+  background-color: #ebf5fb;
+  color: #1a5276;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.horario-opciones .horario-activo {
+  background-color: #1a5276;
+  color: #ffffff;
+}
+
+.calor-horario-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calor-horario {
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 5px solid;
+}
+
+.calor-horario h5 {
+  margin: 0 0 5px;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.calor-horario p {
+  margin: 0 0 5px;
+  color: #34495e;
+}
+
+.calor-horario strong {
+  color: #1a5276;
+}
+
+.calor-horario.bajo {
+  background-color: #eafaf1;
+  border-left-color: #27ae60;
+}
+
+.calor-horario.moderado {
+  background-color: #fcf3cf;
+  border-left-color: #f1c40f;
+}
+
+.calor-horario.alto {
+  background-color: #fdebd0;
+  border-left-color: #e67e22;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+/* Ajustes para celular */
+
+@media (max-width: 768px) {
+  .sec-mapa {
+    padding: 50px 25px;
+  }
+
+  .mapa-contenido {
+    flex-direction: column;
+  }
+
+  .mapa-visual {
+    min-height: 360px;
+  }
+
+  .zona-tranquila {
+    width: 130px;
+    height: 130px;
+    top: 35px;
+    left: 25px;
+  }
+
+  .zona-moderada {
+    width: 140px;
+    height: 140px;
+    top: 140px;
+    left: 110px;
+  }
+
+  .zona-ruidosa {
+    width: 130px;
+    height: 130px;
+    top: 45px;
+    right: 25px;
+  }
+
+  .zona-critica {
+    width: 145px;
+    height: 145px;
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .zona span {
+    font-size: 0.7rem;
+  }
+
+  .detalle-mapa {
+    padding: 22px;
+  }
 }
