@@ -1,90 +1,96 @@
 .footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  text-align: center;
-  padding: 20px;
-  border-top: 4px solid #5dade2;
-  margin-top: 40px;
+  background-color: #0b0f19;
+  padding: 45px 40px 25px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer p {
+.div-gral-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.footer-columna {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-columna h3 {
+  color: #38bdf8;
+  margin: 0 0 15px;
+  font-size: 1.1rem;
+}
+
+.footer-columna p {
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-columna ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-hr {
-  border: 2px solid #aed6f1;
-  margin: 30px auto;
-  width: 80%;
+.footer-columna ul li {
+  margin-bottom: 10px;
+}
+
+.footer-columna ul li a,
+.footer-columna ul li a:visited {
+  text-decoration: none;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.footer-columna ul li a:hover {
+  color: #38bdf8;
+}
+
+.footer-copy {
+  max-width: 1200px;
+  margin: 35px auto 0;
+  padding-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-copy p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
-  .top-header {
-    flex-direction: column;
-    padding: 15px 20px;
+  .footer {
+    padding: 35px 25px 25px;
   }
 
-  .Menu-Horizontal {
+  .div-gral-footer {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .footer-columna {
     width: 100%;
-    text-align: center;
-    margin-top: 10px;
   }
 
-  .Menu-Horizontal li a {
-    display: block;
-    padding: 8px;
-  }
-
-  .principal {
-    height: 500px;
-    padding: 20px;
-    background-size: cover;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .texto-principal {
-    padding: 20px;
-    max-width: 100%;
-  }
-
-  .texto-principal h2 {
-    font-size: 22px;
-  }
-
-  .texto-principal p {
-    font-size: 14px;
-  }
-
-  .funciones,
-  .estadisticas,
-  .mapa,
-  .reporte,
-  .Herramientas,
-  .Beneficios,
-  .descargar,
-  .contacto {
-    padding: 20px;
-    margin: 20px 15px;
-  }
-
-  .funciones h2,
-  .estadisticas h2,
-  .mapa h2,
-  .reporte h2,
-  .Herramientas h2,
-  .Beneficios h2,
-  .descargar h2,
-  .contacto h2 {
-    font-size: 1.5em;
-  }
-
-  .lista-beneficios {
-    grid-template-columns: 1fr;
-  }
-
-  hr {
-    width: 90%;
+  .footer-copy {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
   }
 }
