@@ -27,7 +27,7 @@ Características Principales
 -  Efectos visuales con CSS y JavaScript
 -  Optimización para SEO básico
 
- Tecnologías Utilizadas
+ Tecnologías Utilizadas 
 - HTML5 - Estructura del sitio
 - CSS3 - Estilos y el diseño responsive
 - JavaScript (Vanilla JS)** - Interactividad
