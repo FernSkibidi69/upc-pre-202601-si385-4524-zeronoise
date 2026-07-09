@@ -13,7 +13,7 @@ Sánchez Cuzcano, Mauricio Joaquin U202419277
 Trujillo Lazaro, Cristian Briham  U20241G254
 Vidal Guillen, Enrique U202417701
 
-Segmentos Objetivo
+Segmentos Objetivos
 - Empresas tecnológicas: Compañías que buscan optimizar sus procesos digitales
 - Startups: Empresas emergentes que necesitan presencia digital profesional
 - Profesionales independientes: Freelancers que buscan mostrar sus servicios
