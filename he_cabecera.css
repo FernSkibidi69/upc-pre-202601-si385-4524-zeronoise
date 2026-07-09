@@ -54,6 +54,27 @@ body {
   cursor: pointer;
 }
 
+.Menu-Horizontal {
+  gap: 20px !important; 
+  align-items: center; /* Alinea verticalmente los textos y el botón */
+}
+
+/* Forzamos a que el botón se vea como un botón azul estilizado */
+.Menu-Horizontal li a.btn-ciudadano {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.Menu-Horizontal li a.btn-ciudadano:hover {
+  background-color: #1d4ed8;
+  color: #ffffff !important;
+}
+
 @media (max-width: 768px) {
   .top-header {
     height: 75px;
@@ -97,5 +118,13 @@ body {
     display: block;
     padding: 14px;
     border-bottom: 1px solid #d6eaf8;
+  }
+
+  .Menu-Horizontal {
+    gap: 0 !important;
+  }
+  .Menu-Horizontal li a.btn-ciudadano {
+    border-radius: 0;
+    padding: 14px;
   }
 }
