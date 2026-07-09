@@ -1,80 +1,83 @@
+Entendido perfectamente, vamos a dejarlo limpio y en una sola columna con el fondo unificado de la imagen.
+
+Para que no tengas que modificar tu HTML, simplemente anulamos el diseño de paneles usando CSS. Aquí tienes el código definitivo:
+
+CSS
+/* GENERAL */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f5f5; /* El fondo gris claro de tu imagen */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+/* CONTENEDOR PRINCIPAL (Se elimina la caja blanca) */
 .auth-container {
   display: flex;
-  background: #f5f5f5; /* Mismo fondo de la imagen */
-  width: 900px;
-  max-width: 95%;
-  min-height: 650px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* PANEL IZQUIERDO */
+/* OCULTAR PANEL IZQUIERDO */
 .panel-izquierdo {
-  display: none; /* Oculto por defecto si solo buscas la vista limpia de la imagen */
+  display: none !important;
 }
 
-/* PANEL DERECHO - FORMULARIOS (CENTRALIZADO) */
+/* PANEL DERECHO */
 .panel-derecho {
   width: 100%;
-  padding: 40px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
 }
 
 .auth-form-box {
   width: 100%;
-  max-width: 380px;
   text-align: center;
 }
 
-/* LOGO E ICONOS */
+/* LOGO */
 .form-mini-icon {
-  width: 110px; /* Tamaño similar al de la imagen */
+  width: 120px;
   height: auto;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* TEXTOS */
+/* TITULARES */
 .auth-form-box h2 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin: 0 0 8px 0;
   color: #1a1a1a;
+  margin: 0;
 }
 
 .sub-form {
-  margin: 0 0 35px 0;
-  color: #1a1a1a;
   font-size: 0.95rem;
+  color: #1a1a1a;
+  margin: 5px 0 35px 0;
   font-weight: 500;
 }
 
-/* INPUTS */
+/* INPUTS CENTRADOS */
 .campo-input {
   margin-bottom: 16px;
 }
 
 .campo-input input {
   width: 100%;
-  background-color: #3b5d75; /* Azul exacto del diseño */
+  background-color: #3b5d75; /* Azul exacto de la imagen */
   border: none;
-  padding: 16px 25px;
+  padding: 16px 20px;
   border-radius: 30px;
   color: #ffffff;
   font-size: 1.1rem;
   box-sizing: border-box;
-  text-align: center; /* Centrado como en la imagen */
+  text-align: center; /* Texto centrado como en la foto */
 }
 
 .campo-input input::placeholder {
@@ -84,7 +87,6 @@ body {
 /* ENLACES */
 .olvido-pass {
   display: block;
-  text-align: center;
   color: #666666;
   font-size: 0.9rem;
   font-weight: bold;
@@ -92,48 +94,41 @@ body {
   margin: 15px 0 25px 0;
 }
 
-/* BOTÓN SUBMIT */
+/* BOTÓN INICIAR SESIÓN */
 .btn-submit {
-  background-color: #e1e1e1; /* Gris claro del diseño */
+  background-color: #e1e1e1; /* Gris claro de la imagen */
   color: #3b5d75;
   border: none;
-  padding: 14px 40px;
+  padding: 14px 45px;
   border-radius: 30px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  width: auto;
-  display: inline-block;
-  margin-bottom: 25px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
 /* SECCIÓN SOCIAL */
 .social-text {
   font-size: 0.9rem;
   color: #666666;
-  margin: 0 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .social-icons .icon {
-  font-size: 1.8rem; /* Iconos más grandes y visibles */
+  font-size: 1.8rem;
   color: #3b5d75;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
-.social-icons .icon:hover {
-  transform: scale(1.1);
-}
-
-/* FOOTER DEL FORMULARIO */
+/* FOOTER */
 .foot-form {
   font-size: 0.95rem;
   color: #666666;
@@ -142,18 +137,7 @@ body {
 .foot-form a {
   display: block;
   margin-top: 8px;
-  color: #555555;
+  color: #444444;
   text-decoration: none;
   font-weight: bold;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .auth-container {
-    width: 100%;
-    margin: 0;
-  }
-  .panel-derecho {
-    padding: 20px;
-  }
 }
