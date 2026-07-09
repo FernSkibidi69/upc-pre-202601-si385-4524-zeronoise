@@ -17,5 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     vistaRegistro.style.display = "none";
     vistaLogin.style.display = "block";
+    
+    formLogin.addEventListener("submit", (e) => {
+    e.preventDefault(); // Evita que la página se recargue de golpe
+    
+    // Guardamos en la memoria que el usuario ya inició sesión
+    localStorage.setItem("usuarioLogueado", "true");
+    
+    // Te redirige a tu HTML principal (Cambia 'index.html' por el nombre real de tu archivo principal)
+    window.location.href = "index.html";
   });
 });
