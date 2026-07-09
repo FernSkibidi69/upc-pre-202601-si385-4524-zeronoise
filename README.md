@@ -34,4 +34,4 @@ Características Principales
 - jQuery - Funcionalidades adicionales
 - Google Fonts - Tipografías personalizadas
 - Font Awesome - Iconos
-- Git/GitHub - Control de versiones
+- Git/GitHub - Control de versiones, etc
