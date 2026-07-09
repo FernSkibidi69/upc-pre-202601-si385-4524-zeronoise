@@ -1,3 +1,9 @@
+¡Tienes toda la razón! Al eliminar los dos paneles por completo, el HTML también necesita una estructura mucho más limpia y directa para que coincida perfectamente con la imagen.
+
+Aquí tienes el código completo y unificado para las tres partes (HTML, CSS y JavaScript). He incluido la lógica en JS para que puedas alternar entre "Iniciar Sesión" y "Regístrate" de forma fluida manteniendo siempre el mismo diseño minimalista de fondo único.
+
+1. HTML (index.html)
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,89 +16,65 @@
 
   <div class="auth-container">
     
-    <div class="panel-izquierdo">
-      <div class="logo-wrapper">
-        <img src="NoiseGuard.png" alt="Logo NoiseGuard" class="main-logo">
-      </div>
-      <h1>NoiseGuard</h1>
-      <p class="tagline">Mide, monitorea y reporta el ruido de tu ciudad</p>
+    <div id="vista-login" class="auth-form-box">
+      <img src="NoiseGuard.png" alt="Logo NoiseGuard" class="main-logo">
+      <h2>Inicia Sesión</h2>
+      <p class="sub-form">en NoiseGuarda</p>
       
-      <div class="panel-botones-nav">
-        <button id="nav-ir-login" class="btn-nav active">Inicia sesión</button>
-        <button id="nav-ir-registro" class="btn-nav">Registrarte</button>
+      <form id="form-login">
+        <div class="campo-input">
+          <input type="email" id="login-email" required placeholder="Correo electrónico">
+        </div>
+        <div class="campo-input input-icono">
+          <input type="password" id="login-pass" required placeholder="Contraseña">
+          <span class="icono-ojo">👁</span>
+        </div>
+        <a href="#" class="olvido-pass">¿Olvidaste tu contraseña?</a>
+        
+        <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      </form>
+      
+      <p class="social-text">o iniciar con</p>
+      <div class="social-icons">
+        <span class="icon">G</span>
+        <span class="icon">f</span>
+        <span class="icon">✉</span>
       </div>
+      
+      <p class="foot-form">¿Aún no tienes cuenta? <a href="#" id="link-ir-registro">Resgístrate</a></p>
     </div>
 
-    <div class="panel-derecho">
+    <div id="vista-registro" class="auth-form-box" style="display: none;">
+      <img src="NoiseGuard.png" alt="Logo NoiseGuard" class="main-logo">
+      <h2>Regístrate</h2>
+      <p class="sub-form">en NoiseGuarda</p>
       
-      <div id="vista-login" class="auth-form-box">
-        <img src="NoiseGuard.png" alt="Icono" class="form-mini-icon">
-        <h2>Inicia Sesión</h2>
-        <p class="sub-form">en NoiseGuard</p>
-        
-        <form id="form-login">
-          <div class="campo-input">
-            <input type="email" id="login-email" required placeholder="Correo electrónico">
-          </div>
-          <div class="campo-input">
-            <input type="password" id="login-pass" required placeholder="Contraseña">
-          </div>
-          <a href="#" class="olvido-pass">¿Olvidaste tu contraseña?</a>
-          
-          <button type="submit" class="btn-submit">Iniciar Sesión</button>
-        </form>
-        
-        <p class="social-text">o iniciar con</p>
-        <div class="social-icons">
-          <span class="icon">G</span>
-          <span class="icon">f</span>
-          <span class="icon">✉</span>
+      <form id="form-registro">
+        <div class="campo-input">
+          <input type="text" id="reg-nombre" required placeholder="Nombre de Usuario">
+        </div>
+        <div class="campo-input">
+          <input type="email" id="reg-email" required placeholder="Correo Electrónico">
+        </div>
+        <div class="campo-input">
+          <input type="password" id="reg-pass" required placeholder="Crea tu contraseña">
         </div>
         
-        <p class="foot-form">¿Aún no tienes cuenta? <a href="#" id="link-switch-reg">Regístrate</a></p>
+        <button type="submit" class="btn-submit">Regístrate</button>
+      </form>
+      
+      <p class="social-text">o regístrate con</p>
+      <div class="social-icons">
+        <span class="icon">G</span>
+        <span class="icon">f</span>
+        <span class="icon">✉</span>
       </div>
-
-      <div id="vista-registro" class="auth-form-box" style="display: none;">
-        <img src="NoiseGuard.png" alt="Icono" class="form-mini-icon">
-        <h2>Regístrate</h2>
-        <p class="sub-form">en NoiseGuard</p>
-        
-        <form id="form-registro">
-          <div class="campo-input">
-            <input type="text" id="reg-nombre" required placeholder="Nombre de Usuario">
-          </div>
-          <div class="campo-input">
-            <input type="email" id="reg-email" required placeholder="Correo Electrónico">
-          </div>
-          <div class="campo-input">
-            <input type="email" id="reg-email-verify" required placeholder="Verificar Correo electrónico">
-          </div>
-          <div class="campo-input">
-            <input type="password" id="reg-pass" required placeholder="Crea tu contraseña">
-          </div>
-          <div class="campo-input">
-            <input type="password" id="reg-pass-verify" required placeholder="Verificar Constraseña">
-          </div>
-          <div class="campo-input">
-            <input type="tel" id="reg-tel" placeholder="Teléfono">
-          </div>
-          
-          <button type="submit" class="btn-submit">Regístrate</button>
-        </form>
-        
-        <p class="social-text">o regístrate con</p>
-        <div class="social-icons">
-          <span class="icon">G</span>
-          <span class="icon">f</span>
-          <span class="icon">✉</span>
-        </div>
-        
-        <p class="foot-form">¿Ya tienes cuenta? <a href="#" id="link-switch-log">Inicia Sesión aquí</a></p>
-      </div>
-
+      
+      <p class="foot-form">¿Ya tienes cuenta? <a href="#" id="link-ir-login">Inicia Sesión aquí</a></p>
     </div>
+
   </div>
 
-  <script src="auth_logica.js"></script>
+  <script src="logica_registro.js"></script>
 </body>
 </html>
