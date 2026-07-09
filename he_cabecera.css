@@ -25,41 +25,24 @@ body {
   width: auto;
 }
 
-/* UNIFICADO: Todas las propiedades del menú en un solo bloque */
 .Menu-Horizontal {
   display: flex;
+  gap: 35px;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 12px;          /* Reducido para que quepa el botón sin romper el diseño */
-  align-items: center; /* Alinea los textos con el botón verticalmente */
 }
 
 .Menu-Horizontal li a {
   text-decoration: none;
   color: #1f2937;
-  font-size: 14px;     /* Ajustado ligeramente de 15px a 14px por espacio */
+  font-size: 15px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  white-space: nowrap; /* Evita que los textos del menú se vayan a dos líneas */
 }
 
 .Menu-Horizontal li a:hover {
   color: #1a5276;
-}
-
-/* El botón azul del Acceso Ciudadano */
-.Menu-Horizontal li a.btn-ciudadano {
-  background-color: #2563eb !important;
-  color: #ffffff !important;
-  padding: 8px 16px !important;
-  border-radius: 6px !important;
-  display: inline-block;
-  transition: background-color 0.2s;
-}
-
-.Menu-Horizontal li a.btn-ciudadano:hover {
-  background-color: #1d4ed8 !important;
 }
 
 .menu-toggle {
@@ -71,7 +54,27 @@ body {
   cursor: pointer;
 }
 
-/* MEDIA QUERY COMPACTA: Todo lo responsive ordenado */
+.Menu-Horizontal {
+  gap: 20px !important; 
+  align-items: center; /* Alinea verticalmente los textos y el botón */
+}
+
+/* Forzamos a que el botón se vea como un botón azul estilizado */
+.Menu-Horizontal li a.btn-ciudadano {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.Menu-Horizontal li a.btn-ciudadano:hover {
+  background-color: #1d4ed8;
+  color: #ffffff !important;
+}
+
 @media (max-width: 768px) {
   .top-header {
     height: 75px;
@@ -100,7 +103,7 @@ body {
   .Menu-Horizontal {
     display: none;
     flex-direction: column;
-    gap: 0 !important;
+    gap: 0;
     width: 100%;
     background-color: #ffffff;
     text-align: center;
@@ -117,7 +120,14 @@ body {
     border-bottom: 1px solid #d6eaf8;
   }
 
+  .Menu-Horizontal {
+    gap: 0 !important;
+  }
   .Menu-Horizontal li a.btn-ciudadano {
+    border-radius: 0;
+    padding: 14px;
+  }
+}n-ciudadano {
     border-radius: 0 !important;
     padding: 14px !important;
   }
