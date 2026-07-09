@@ -33,7 +33,7 @@
         <li><a href="#reportes">Reportes</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#descargar">Descargar App</a></li>
-        <li class="item-derecha"><a href="registro.html" class="btn-ciudadano">Acceso</a></li>
+        <li id="item-acceso" class="item-derecha"><a href="registro.html" class="btn-ciudadano">Acceso</a></li>
       </ul>
     </nav>
 
@@ -1075,5 +1075,21 @@
         });
       }
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const itemAcceso = document.getElementById("item-acceso");
+    
+    // Si el usuario ya inició sesión
+    if (localStorage.getItem("usuarioLogueado") === "true") {
+      
+      itemAcceso.innerHTML = `
+        <a href="#" id="btn-perfil" style="display: flex; align-items: center; justify-content: center; padding: 0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Usuario" style="width: 35px; height: 
+          35px; border-radius: 50%; border: 2px solid #3b5d75; background-color: #fff;">
+        </a>
+      `;
+    }
+  });
+</script>
   </body>
 </html>
