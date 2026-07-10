@@ -1,0 +1,157 @@
+:root {
+  --azul: #2980b9;
+  --azul-oscuro: #1a5276;
+  --gris-claro: #f5f7fa;
+  --blanco: #ffffff;
+  --texto: #212121;
+  --verde: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Lato", sans-serif;
+}
+
+body {
+  background: var(--gris-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.metrics-container {
+  background: var(--blanco);
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.logo {
+  font-family: "Montserrat", "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--azul);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--gris-claro);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.metric-icon {
+  font-size: 28px;
+}
+
+.metric-value {
+  font-family: "Roboto Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul);
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.benchmark-toggle {
+  margin-bottom: 16px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--azul);
+  cursor: pointer;
+}
+
+.benchmark-panel {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.benchmark-panel.show {
+  display: flex;
+}
+
+.benchmark-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.benchmark-name {
+  width: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texto);
+  flex-shrink: 0;
+}
+
+.benchmark-bar-wrapper {
+  flex: 1;
+  background: var(--gris-claro);
+  border-radius: 6px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.benchmark-bar {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.benchmark-bar.lima {
+  background: var(--azul);
+}
+
+.benchmark-bar.borja {
+  background: var(--verde);
+}
+
+.benchmark-value {
+  width: 50px;
+  text-align: right;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--texto);
+  flex-shrink: 0;
+}

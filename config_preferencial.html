@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Configuración preferencial</title>
+    <link rel="stylesheet" href="css/config_preferencial.css" />
+  </head>
+  <body>
+    <section class="sec-config-preferencial">
+      <h2>Configuración preferencial</h2>
+      <p class="config-intro">
+        Ajusta tus propios límites de ruido para descanso y concentración, según
+        tu tolerancia personal.
+      </p>
+
+      <div class="config-container">
+        <div class="config-card">
+          <h3>Configura tus límites</h3>
+
+          <div class="campo-alerta">
+            <label for="umbralDescanso">Límite alerta descanso (noche)</label>
+            <div class="umbral-control">
+              <input
+                type="range"
+                id="umbralDescanso"
+                min="30"
+                max="80"
+                value="45"
+                oninput="actualizarValor('Descanso')"
+              />
+              <span id="valorDescanso">45 dB</span>
+            </div>
+          </div>
+
+          <div class="campo-alerta">
+            <label for="umbralConcentracion"
+              >Límite alerta concentración (día)</label
+            >
+            <div class="umbral-control">
+              <input
+                type="range"
+                id="umbralConcentracion"
+                min="40"
+                max="90"
+                value="60"
+                oninput="actualizarValor('Concentracion')"
+              />
+              <span id="valorConcentracion">60 dB</span>
+            </div>
+          </div>
+
+          <button class="btn-guardar" type="button" onclick="guardarConfig()">
+            Guardar configuración
+          </button>
+          <p class="mensaje-confirmacion" id="msgConfirmacion">
+            Configuración guardada correctamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/config_preferencial.js"></script>
+  </body>
+</html>
