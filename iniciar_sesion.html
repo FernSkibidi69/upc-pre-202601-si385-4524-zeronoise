@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoiseGuard - Iniciar sesión</title>
+<link rel="stylesheet" href="css/iniciar_sesion.css">
+</head>
+<body>
+
+<div class="modal-overlay">
+  <div class="auth-card">
+    <a href="index.html" class="close-btn">✕</a>
+
+    <img src="images/logo.png" alt="NoiseGuard" class="auth-logo">
+
+    <!-- Toggle Ciudadano / Funcionario -->
+    <div class="role-toggle">
+      <button id="btnCiudadano" class="active" onclick="switchRole('ciudadano')">Ciudadano</button>
+      <button id="btnFuncionario" onclick="switchRole('funcionario')">Funcionario</button>
+    </div>
+
+    <h2>Bienvenido de vuelta</h2>
+    <p class="subtitle" id="loginSubtitle">Inicia sesión con tu cuenta de Gmail para gestionar tus mediciones y reportes.</p>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="form-group">
+        <label for="loginEmail" id="labelCorreo">Correo Electrónico</label>
+        <div class="input-wrap">
+          <span class="input-icon">✉</span>
+          <input type="email" id="loginEmail" placeholder="tu.correo@gmail.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Contraseña</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="loginPassword" placeholder="Ingresa tu contraseña" required>
+        </div>
+      </div>
+
+      <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+
+      <!-- Escenario 2: Credenciales inválidas -->
+      <div class="msg error" id="msgLoginError">
+        Correo o contraseña incorrectos, o el correo no corresponde al dominio esperado.
+      </div>
+
+      <!-- Escenario 1: Inicio de sesión exitoso -->
+      <div class="msg success" id="msgLoginSuccess">
+        Sesión iniciada correctamente. Redirigiendo...
+      </div>
+
+      <button type="submit" class="submit-btn">Iniciar Sesión</button>
+    </form>
+
+    <p class="switch-note">¿Aún no tienes una cuenta? <a href="crear_cuenta.html" class="link-alt">Regístrate aquí</a></p>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/iniciar_sesion.js"></script>
+</body>
+</html>

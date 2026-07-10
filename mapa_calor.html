@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Mapa de calor por horario</title>
+    <link rel="stylesheet" href="css/mapa_calor.css" />
+  </head>
+  <body>
+    <section class="sec-mapa-horario">
+      <div class="div-gral-mapa-horario">
+        <div class="mapa-horario-texto">
+          <h2>Mapa de calor por horario</h2>
+          <p>
+            Compara cómo varía el nivel de ruido en la ciudad según la hora del
+            día.
+          </p>
+        </div>
+
+        <div class="horario-opciones" id="horarioOpciones">
+          <span class="horario-activo" onclick="cambiarHorario(this, 'manana')"
+            >Mañana</span
+          >
+          <span onclick="cambiarHorario(this, 'tarde')">Tarde</span>
+          <span onclick="cambiarHorario(this, 'noche')">Noche</span>
+        </div>
+
+        <div class="calor-horario-lista" id="calorLista"></div>
+      </div>
+    </section>
+
+    <script src="js/mapa_calor.js"></script>
+  </body>
+</html>

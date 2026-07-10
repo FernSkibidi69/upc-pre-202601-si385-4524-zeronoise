@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Mapa de ruido colaborativo</title>
+    <link rel="stylesheet" href="css/mapa_colaborativo.css" />
+  </head>
+  <body>
+    <section id="mapa" class="sec-mapa">
+      <div class="div-gral-mapa">
+        <div class="mapa-texto">
+          <h2>Mapa de ruido colaborativo</h2>
+          <p>
+            Visualiza las zonas críticas de ruido reportadas por los usuarios y
+            revisa el detalle de cada punto registrado en la ciudad.
+          </p>
+        </div>
+
+        <div class="mapa-contenido">
+          <div class="mapa-visual" id="mapaVisual">
+            <div class="zona zona-tranquila"><span>Zona tranquila</span></div>
+            <div class="zona zona-moderada"><span>Zona moderada</span></div>
+            <div class="zona zona-ruidosa"><span>Zona ruidosa</span></div>
+            <div class="zona zona-critica"><span>Zona crítica</span></div>
+
+            <div class="punto-reporte punto-uno" onclick="verDetalle(0)"></div>
+            <div class="punto-reporte punto-dos" onclick="verDetalle(1)"></div>
+            <div class="punto-reporte punto-tres" onclick="verDetalle(2)"></div>
+          </div>
+
+          <div class="detalle-mapa">
+            <h3>Detalle del reporte</h3>
+
+            <div class="detalle-card" id="detalleCard">
+              <h4 id="detalleZona">Av. Principal</h4>
+              <p><strong>Nivel:</strong> <span id="detalleDb">82 dB</span></p>
+              <p>
+                <strong>Estado:</strong>
+                <span id="detalleEstado">Zona crítica</span>
+              </p>
+              <p>
+                <strong>Horario:</strong> <span id="detalleHorario">18:30</span>
+              </p>
+              <p id="detalleTexto">
+                Reporte generado por usuarios debido a tráfico intenso y ruido
+                constante en la zona.
+              </p>
+            </div>
+
+            <div class="leyenda-mapa">
+              <h4>Leyenda</h4>
+              <p><span class="color bajo"></span> Bajo ruido</p>
+              <p><span class="color moderado"></span> Ruido moderado</p>
+              <p><span class="color alto"></span> Ruido alto</p>
+              <p><span class="color critico"></span> Ruido crítico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/mapa_colaborativo.js"></script>
+  </body>
+</html>

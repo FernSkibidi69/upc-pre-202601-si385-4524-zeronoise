@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Asignar inspector</title>
+    <link rel="stylesheet" href="css/asignar_inspector.css" />
+  </head>
+  <body>
+    <div class="assign-container">
+      <div class="logo">🔊 NoiseGuard</div>
+      <h2>Asignar incidencia</h2>
+      <p class="subtitle">
+        Selecciona un inspector de campo para verificar in situ.
+      </p>
+
+      <div class="incident-card">
+        <span class="marker-dot rojo" id="incidentMarker"></span>
+        <div>
+          <div class="incident-address">Av. Javier Prado 450, San Isidro</div>
+          <div class="incident-meta">Reportado hace 3 días — 78 dB</div>
+        </div>
+      </div>
+
+      <div class="inspectors-list" id="inspectorsList"></div>
+
+      <!-- Escenario 2: Advertencia de sobrecarga -->
+      <div class="overload-warning" id="overloadWarning">
+        ⚠️ Este inspector tiene carga alta (8 incidencias esta semana).
+      </div>
+
+      <button
+        class="assign-btn"
+        id="assignBtn"
+        onclick="confirmAssignment()"
+        disabled
+      >
+        Asignar
+      </button>
+
+      <!-- Escenario 1: Confirmación de asignación -->
+      <div class="msg success" id="msgAssignSuccess">
+        Incidencia asignada correctamente. El inspector recibió una
+        notificación.
+      </div>
+    </div>
+
+    <script src="js/asignar_inspector.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Gráfico últimas 24 horas</title>
+    <link rel="stylesheet" href="css/grafico_24h.css" />
+  </head>
+  <body>
+    <section id="grafico-24h" class="sec-grafico-24h">
+      <div class="div-gral-grafico-24h">
+        <div class="grafico-24h-texto">
+          <h2>Gráfico de últimas 24 horas</h2>
+          <p>
+            Visualiza la variación de los niveles de ruido registrados durante
+            las últimas 24 horas.
+          </p>
+        </div>
+
+        <div class="grafico-contenedor">
+          <div class="grafico-barras" id="graficoBarras"></div>
+
+          <div class="grafico-resumen">
+            <h3>Resumen del día</h3>
+
+            <div class="grafico-dato">
+              <span>Mayor nivel</span>
+              <strong id="mayorNivel">-- dB</strong>
+            </div>
+
+            <div class="grafico-dato">
+              <span>Menor nivel</span>
+              <strong id="menorNivel">-- dB</strong>
+            </div>
+
+            <div class="grafico-dato">
+              <span>Promedio</span>
+              <strong id="promedioNivel">-- dB</strong>
+            </div>
+
+            <p id="resumenTexto">
+              El mayor nivel de ruido se presentó durante la noche,
+              principalmente en zonas con tráfico y actividad comercial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/grafico_24h.js"></script>
+  </body>
+</html>

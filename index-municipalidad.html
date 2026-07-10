@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Panel municipal</title>
+    <link rel="stylesheet" href="css/municipalidad.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Municipal</div>
+
+      <nav class="sidebar-nav">
+        <a href="#sec-fiscalizacion" class="side-link active"
+          >🚨 Fiscalización</a
+        >
+        <a href="#sec-analitica" class="side-link">📊 Analítica</a>
+        <a href="#sec-administracion" class="side-link">⚙️ Administración</a>
+        <a href="#sec-comunicacion" class="side-link">💬 Comunicación</a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Panel de gestión municipal</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Funcionario: <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <!-- FISCALIZACIÓN -->
+        <section class="group" id="sec-fiscalizacion">
+          <h2 class="group-title">🚨 Fiscalización</h2>
+          <div class="cards-grid">
+            <a href="mapa_incidencias.html" class="launch-card">
+              <div class="card-icon">🗺️</div>
+              <strong>Mapa de incidencias</strong>
+              <p>Reportes ciudadanos pendientes y atendidos en el distrito.</p>
+            </a>
+            <a href="asignar_inspector.html" class="launch-card">
+              <div class="card-icon">👮</div>
+              <strong>Asignar inspector</strong>
+              <p>
+                Deriva incidencias a inspectores de campo para verificación.
+              </p>
+            </a>
+            <a href="comparacion_operativo.html" class="launch-card">
+              <div class="card-icon">⚖️</div>
+              <strong>Impacto de operativos</strong>
+              <p>Compara el ruido antes y después de cada intervención.</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- ANALÍTICA -->
+        <section class="group" id="sec-analitica">
+          <h2 class="group-title">📊 Analítica</h2>
+          <div class="cards-grid">
+            <a href="tablero_distrito.html" class="launch-card">
+              <div class="card-icon">🏙️</div>
+              <strong>Tablero por distrito</strong>
+              <p>Niveles de ruido promedio por cuadra y puntos críticos.</p>
+            </a>
+            <a href="mapa_calor.html" class="launch-card">
+              <div class="card-icon">🔥</div>
+              <strong>Mapa de calor</strong>
+              <p>Dinámica del ruido por franjas horarias del día.</p>
+            </a>
+            <a href="grafico_fuentes.html" class="launch-card">
+              <div class="card-icon">🥧</div>
+              <strong>Fuentes de ruido</strong>
+              <p>Distribución y tendencia de los tipos de fuente.</p>
+            </a>
+            <a href="dashboard_tiempo.html" class="launch-card">
+              <div class="card-icon">⏱️</div>
+              <strong>Tiempos de asignación</strong>
+              <p>Eficiencia del equipo y benchmark entre distritos.</p>
+            </a>
+            <a href="panel_satisfaccion.html" class="launch-card">
+              <div class="card-icon">⭐</div>
+              <strong>Satisfacción ciudadana</strong>
+              <p>Reportes reabiertos y calidad de atención por inspector.</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- ADMINISTRACIÓN -->
+        <section class="group" id="sec-administracion">
+          <h2 class="group-title">⚙️ Administración</h2>
+          <div class="cards-grid">
+            <a href="asignacion_roles.html" class="launch-card">
+              <div class="card-icon">👥</div>
+              <strong>Gestión de roles</strong>
+              <p>Asigna roles a los funcionarios municipales.</p>
+            </a>
+            <a href="actualizar_limite_legal.html" class="launch-card">
+              <div class="card-icon">📜</div>
+              <strong>Límites legales</strong>
+              <p>Actualiza los límites de ruido por tipo de zona.</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- COMUNICACIÓN -->
+        <section class="group" id="sec-comunicacion">
+          <h2 class="group-title">💬 Comunicación con ciudadanos</h2>
+          <div class="cards-grid">
+            <a href="mensaje_automatico.html" class="launch-card">
+              <div class="card-icon">✉️</div>
+              <strong>Mensajes de atención</strong>
+              <p>Notificación automática al cerrar reportes ciudadanos.</p>
+            </a>
+            <a href="notificaciones_masivas.html" class="launch-card">
+              <div class="card-icon">📢</div>
+              <strong>Campañas masivas</strong>
+              <p>Notificaciones push educativas sobre riesgos del ruido.</p>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("funcionario");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/municipalidad.js"></script>
+  </body>
+</html>

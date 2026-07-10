@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Indicador por colores</title>
+    <link rel="stylesheet" href="css/indicador_color.css" />
+  </head>
+  <body>
+    <section class="escala-colores-section">
+      <h2>Nivel de ruido por colores</h2>
+      <p class="escala-intro">
+        Identifica rápidamente la peligrosidad del ruido de tu entorno sin
+        necesidad de leer los decibeles.
+      </p>
+
+      <div class="medidor-actual">
+        <div class="circulo-medidor" id="circuloMedidor">
+          <span id="dbActual">42 dB</span>
+        </div>
+        <p class="estado-actual" id="estadoActual">Bajo</p>
+      </div>
+
+      <div class="escala-colores">
+        <h3>Escala de ruido por colores</h3>
+        <p>
+          Los colores permiten identificar rápidamente el nivel de contaminación
+          sonora según los decibeles registrados.
+        </p>
+
+        <div class="escala-lista">
+          <div class="escala-item escala-baja" onclick="simular(45)">
+            <span class="circulo-color"></span>
+            <div>
+              <h4>Bajo</h4>
+              <p>0 - 50 dB</p>
+            </div>
+          </div>
+          <div class="escala-item escala-moderada" onclick="simular(62)">
+            <span class="circulo-color"></span>
+            <div>
+              <h4>Moderado</h4>
+              <p>51 - 70 dB</p>
+            </div>
+          </div>
+          <div class="escala-item escala-alta" onclick="simular(78)">
+            <span class="circulo-color"></span>
+            <div>
+              <h4>Alto</h4>
+              <p>71 - 85 dB</p>
+            </div>
+          </div>
+          <div class="escala-item escala-critica" onclick="simular(92)">
+            <span class="circulo-color"></span>
+            <div>
+              <h4>Crítico</h4>
+              <p>Más de 85 dB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/indicador_color.js"></script>
+  </body>
+</html>

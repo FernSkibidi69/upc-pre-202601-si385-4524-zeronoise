@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Publicaciones del mapa</title>
+    <link rel="stylesheet" href="css/interaccion_mapa.css" />
+  </head>
+  <body>
+    <section class="sec-interaccion">
+      <div class="div-gral-interaccion">
+        <div class="interaccion-texto">
+          <h2>Publicaciones del mapa</h2>
+          <p>
+            Consulta el detalle de las publicaciones de ruido reportadas por
+            otros vecinos en tu zona.
+          </p>
+        </div>
+
+        <div class="publicaciones-lista" id="publicacionesLista"></div>
+
+        <!-- Detalle expandido -->
+        <div class="detalle-card" id="detalleCard" style="display: none">
+          <div class="detalle-header">
+            <h4 id="detalleZona">--</h4>
+            <button class="cerrar-detalle" onclick="cerrarDetalle()">✕</button>
+          </div>
+          <p id="detalleTexto">--</p>
+          <div class="detalle-meta">
+            <div><span>Nivel</span><strong id="detalleDb">-- dB</strong></div>
+            <div><span>Estado</span><strong id="detalleEstado">--</strong></div>
+            <div><span>Hora</span><strong id="detalleHora">--</strong></div>
+          </div>
+          <div class="detalle-acciones">
+            <button class="btn-evidencia-mini" onclick="agregarEvidencia()">
+              Evidencia +1
+            </button>
+            <button class="btn-reportar-mini" onclick="reportarPublicacion()">
+              Reportar
+            </button>
+          </div>
+          <div class="mensaje-confirmacion" id="msgAccion"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/interaccion_mapa.js"></script>
+  </body>
+</html>
