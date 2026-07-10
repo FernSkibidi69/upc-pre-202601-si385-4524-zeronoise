@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Asignación de roles</title>
+    <link rel="stylesheet" href="css/asignacion_roles.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Municipal</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-municipalidad.html#sec-fiscalizacion" class="side-link">
+          <span class="icon">🚨</span> Fiscalización
+        </a>
+        <a href="index-municipalidad.html#sec-analitica" class="side-link">
+          <span class="icon">📊</span> Analítica
+        </a>
+        <a href="index-municipalidad.html#sec-administracion" class="side-link">
+          <span class="icon">⚙️</span> Administración
+        </a>
+        <a href="index-municipalidad.html#sec-comunicacion" class="side-link">
+          <span class="icon">💬</span> Comunicación
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Asignación de roles</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Funcionario: <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="roles-container">
+          <h2>Gestión de usuarios</h2>
+          <p class="subtitle">Asigna roles a los funcionarios municipales.</p>
+
+          <div class="users-list" id="usersList"></div>
+
+          <!-- Panel de asignación -->
+          <div class="assign-panel" id="assignPanel">
+            <div class="panel-header">
+              <span id="selectedUserName">--</span>
+              <button class="close-btn" onclick="closePanel()">✕</button>
+            </div>
+
+            <div class="form-group">
+              <label for="roleSelect">Rol a asignar</label>
+              <select id="roleSelect">
+                <option value="">Selecciona un rol</option>
+                <option value="inspector">Inspector de campo</option>
+                <option value="analista">Analista de datos</option>
+                <option value="jefe">Jefe de fiscalización</option>
+              </select>
+            </div>
+
+            <!-- Escenario 2: Asignación fallida -->
+            <div class="msg error" id="msgRoleError">
+              Debes seleccionar un rol válido para poder completar la
+              asignación.
+            </div>
+
+            <!-- Escenario 1: Asignación exitosa -->
+            <div class="msg success" id="msgRoleSuccess">
+              Rol asignado correctamente. El funcionario ahora accede solo a las
+              funciones de su rol.
+            </div>
+
+            <button class="assign-btn" onclick="assignRole()">
+              Asignar rol
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("funcionario");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/asignacion_roles.js"></script>
+  </body>
+</html>

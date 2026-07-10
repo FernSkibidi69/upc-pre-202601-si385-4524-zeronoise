@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Panel de administración de límites</title>
+    <link rel="stylesheet" href="css/actualizar_limite_legal.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Municipal</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-municipalidad.html#sec-fiscalizacion" class="side-link">
+          <span class="icon">🚨</span> Fiscalización
+        </a>
+        <a href="index-municipalidad.html#sec-analitica" class="side-link">
+          <span class="icon">📊</span> Analítica
+        </a>
+        <a href="index-municipalidad.html#sec-administracion" class="side-link">
+          <span class="icon">⚙️</span> Administración
+        </a>
+        <a href="index-municipalidad.html#sec-comunicacion" class="side-link">
+          <span class="icon">💬</span> Comunicación
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Panel de administración de límites</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Funcionario: <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="admin-container">
+          <h2>Panel de administración</h2>
+          <p class="subtitle">
+            Actualiza los límites legales de ruido por tipo de zona.
+          </p>
+
+          <div class="controls-row">
+            <button
+              class="view-toggle active"
+              id="btnEdit"
+              onclick="setView('edit')"
+            >
+              Editar límites
+            </button>
+            <button
+              class="view-toggle"
+              id="btnAudit"
+              onclick="setView('audit')"
+            >
+              Auditoría
+            </button>
+          </div>
+
+          <!-- Escenario 1: Nueva ordenanza -->
+          <div class="view-panel show" id="editView">
+            <div class="zone-row">
+              <span class="zone-name">Residencial (día)</span>
+              <input type="number" id="resDay" value="60" />
+              <span class="unit">dB</span>
+            </div>
+            <div class="zone-row">
+              <span class="zone-name">Residencial (noche)</span>
+              <input type="number" id="resNight" value="50" />
+              <span class="unit">dB</span>
+            </div>
+            <div class="zone-row">
+              <span class="zone-name">Comercial (día)</span>
+              <input type="number" id="comDay" value="70" />
+              <span class="unit">dB</span>
+            </div>
+            <div class="zone-row">
+              <span class="zone-name">Comercial (noche)</span>
+              <input type="number" id="comNight" value="60" />
+              <span class="unit">dB</span>
+            </div>
+            <div class="zone-row">
+              <span class="zone-name">Industrial (día)</span>
+              <input type="number" id="indDay" value="80" />
+              <span class="unit">dB</span>
+            </div>
+            <div class="zone-row">
+              <span class="zone-name">Industrial (noche)</span>
+              <input type="number" id="indNight" value="70" />
+              <span class="unit">dB</span>
+            </div>
+
+            <button class="save-btn" onclick="saveLimits()">
+              Guardar cambios
+            </button>
+
+            <div class="msg success" id="msgSaved">
+              Límites actualizados. Todas las comparaciones en la app de
+              ciudadanos usarán los nuevos valores.
+            </div>
+          </div>
+
+          <!-- Escenario 2: Auditoría de parámetros -->
+          <div class="view-panel" id="auditView">
+            <div class="audit-list" id="auditList"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("funcionario");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/actualizar_limite_legal.js"></script>
+  </body>
+</html>

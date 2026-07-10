@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Resumen semanal</title>
+    <link rel="stylesheet" href="css/resumen_semanal.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Ciudadano</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-ciudadano.html#sec-medir" class="side-link">
+          <span class="icon">🎙️</span> Medición
+        </a>
+        <a href="index-ciudadano.html#sec-mapa" class="side-link">
+          <span class="icon">🗺️</span> Mapa
+        </a>
+        <a href="index-ciudadano.html#sec-reportes" class="side-link">
+          <span class="icon">📋</span> Reportes
+        </a>
+        <a href="index-ciudadano.html#sec-historial" class="side-link">
+          <span class="icon">🕓</span> Historial
+        </a>
+        <a href="index-ciudadano.html#sec-perfil" class="side-link">
+          <span class="icon">👤</span> Perfil
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Resumen semanal</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Hola, <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section id="resumen-semanal" class="sec-resumen-semanal">
+          <div class="div-gral-resumen-semanal">
+            <div class="resumen-semanal-texto">
+              <h2>Resumen semanal de exposición</h2>
+              <p>
+                Consulta un resumen de los niveles de ruido registrados durante
+                la semana para conocer tu exposición sonora y detectar los días
+                con mayor contaminación acústica.
+              </p>
+            </div>
+
+            <div class="resumen-semanal-contenido">
+              <div class="resumen-card principal">
+                <h3>Promedio semanal</h3>
+                <strong id="promedioSemanal">68 dB</strong>
+                <p id="promedioTexto">Nivel moderado de exposición sonora.</p>
+              </div>
+
+              <div class="resumen-card">
+                <h3>Día con mayor ruido</h3>
+                <strong id="diaMayor">Viernes</strong>
+                <p id="diaMayorTexto">
+                  Registro aproximado de 82 dB en zona comercial.
+                </p>
+              </div>
+
+              <div class="resumen-card">
+                <h3>Zona más frecuente</h3>
+                <strong>Avenida principal</strong>
+                <p>Área con mayor cantidad de mediciones registradas.</p>
+              </div>
+
+              <!-- Escenario 2: Exceso semanal -->
+              <div class="resumen-card" id="cardRecomendacion">
+                <h3>Recomendación</h3>
+                <strong id="recomendacionTitulo">Evitar horas punta</strong>
+                <p id="recomendacionTexto">
+                  Se recomienda reducir la exposición en horarios de alto
+                  tráfico.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("ciudadano");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/resumen_semanal.js"></script>
+  </body>
+</html>

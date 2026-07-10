@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Zonas silenciosas</title>
+    <link rel="stylesheet" href="css/zonas_silenciosas.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Ciudadano</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-ciudadano.html#sec-medir" class="side-link">
+          <span class="icon">🎙️</span> Medición
+        </a>
+        <a href="index-ciudadano.html#sec-mapa" class="side-link">
+          <span class="icon">🗺️</span> Mapa
+        </a>
+        <a href="index-ciudadano.html#sec-reportes" class="side-link">
+          <span class="icon">📋</span> Reportes
+        </a>
+        <a href="index-ciudadano.html#sec-historial" class="side-link">
+          <span class="icon">🕓</span> Historial
+        </a>
+        <a href="index-ciudadano.html#sec-perfil" class="side-link">
+          <span class="icon">👤</span> Perfil
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Zonas silenciosas</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Hola, <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="sec-zonas-silenciosas">
+          <div class="div-gral-zonas">
+            <div class="zonas-texto">
+              <h2>Zonas silenciosas recomendadas</h2>
+              <p>
+                Marca un lugar tranquilo que encontraste y ayuda a otros a
+                descubrir espacios de descanso auditivo.
+              </p>
+            </div>
+
+            <button class="btn-recomendar" onclick="recomendarZona()">
+              📍 Recomendar zona silenciosa
+            </button>
+            <p class="mensaje-confirmacion" id="msgRecomendada">
+              Se agregó tu recomendación al mapa colaborativo.
+            </p>
+
+            <div class="zonas-silenciosas" id="zonasLista">
+              <div class="zona-recomendada" data-confirmaciones="2">
+                <h5>Parque Central</h5>
+                <p>Promedio aproximado: 42 dB</p>
+                <span>Ideal para descansar o estudiar.</span>
+                <div class="confirmacion-row">
+                  <span class="confirmacion-count">2 / 5 confirmaciones</span>
+                  <button onclick="confirmarZona(this)">Confirmar</button>
+                </div>
+              </div>
+
+              <div class="zona-recomendada" data-confirmaciones="4">
+                <h5>Zona residencial norte</h5>
+                <p>Promedio aproximado: 48 dB</p>
+                <span>Ambiente tranquilo durante la mañana.</span>
+                <div class="confirmacion-row">
+                  <span class="confirmacion-count">4 / 5 confirmaciones</span>
+                  <button onclick="confirmarZona(this)">Confirmar</button>
+                </div>
+              </div>
+
+              <div class="zona-recomendada" data-confirmaciones="1">
+                <h5>Biblioteca municipal</h5>
+                <p>Promedio aproximado: 38 dB</p>
+                <span>Espacio recomendado para concentración.</span>
+                <div class="confirmacion-row">
+                  <span class="confirmacion-count">1 / 5 confirmaciones</span>
+                  <button onclick="confirmarZona(this)">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("ciudadano");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/zonas_silenciosas.js"></script>
+  </body>
+</html>

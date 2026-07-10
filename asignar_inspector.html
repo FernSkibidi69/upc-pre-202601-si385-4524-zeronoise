@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Asignar inspector</title>
+    <link rel="stylesheet" href="css/asignar_inspector.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Municipal</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-municipalidad.html#sec-fiscalizacion" class="side-link">
+          <span class="icon">🚨</span> Fiscalización
+        </a>
+        <a href="index-municipalidad.html#sec-analitica" class="side-link">
+          <span class="icon">📊</span> Analítica
+        </a>
+        <a href="index-municipalidad.html#sec-administracion" class="side-link">
+          <span class="icon">⚙️</span> Administración
+        </a>
+        <a href="index-municipalidad.html#sec-comunicacion" class="side-link">
+          <span class="icon">💬</span> Comunicación
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Asignar inspector</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Funcionario: <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="assign-container">
+          <h2>Asignar incidencia</h2>
+          <p class="subtitle">
+            Selecciona un inspector de campo para verificar in situ.
+          </p>
+
+          <div class="incident-card">
+            <span class="marker-dot rojo" id="incidentMarker"></span>
+            <div>
+              <div class="incident-address">
+                Av. Javier Prado 450, San Isidro
+              </div>
+              <div class="incident-meta">Reportado hace 3 días — 78 dB</div>
+            </div>
+          </div>
+
+          <div class="inspectors-list" id="inspectorsList"></div>
+
+          <!-- Escenario 2: Advertencia de sobrecarga -->
+          <div class="overload-warning" id="overloadWarning">
+            ⚠️ Este inspector tiene carga alta (8 incidencias esta semana).
+          </div>
+
+          <button
+            class="assign-btn"
+            id="assignBtn"
+            onclick="confirmAssignment()"
+            disabled
+          >
+            Asignar
+          </button>
+
+          <!-- Escenario 1: Confirmación de asignación -->
+          <div class="msg success" id="msgAssignSuccess">
+            Incidencia asignada correctamente. El inspector recibió una
+            notificación.
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("funcionario");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/asignar_inspector.js"></script>
+  </body>
+</html>

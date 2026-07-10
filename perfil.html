@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Mi perfil</title>
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Ciudadano</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-ciudadano.html#sec-medir" class="side-link">
+          <span class="icon">🎙️</span> Medición
+        </a>
+        <a href="index-ciudadano.html#sec-mapa" class="side-link">
+          <span class="icon">🗺️</span> Mapa
+        </a>
+        <a href="index-ciudadano.html#sec-reportes" class="side-link">
+          <span class="icon">📋</span> Reportes
+        </a>
+        <a href="index-ciudadano.html#sec-historial" class="side-link">
+          <span class="icon">🕓</span> Historial
+        </a>
+        <a href="index-ciudadano.html#sec-perfil" class="side-link">
+          <span class="icon">👤</span> Perfil
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Mi perfil</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Hola, <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="profile-container">
+          <h2>Mi perfil</h2>
+          <p class="subtitle">Actualiza tus datos personales y preferencias.</p>
+
+          <form id="profileForm" onsubmit="return saveProfile(event)">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" value="Ana Torres" />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo (Gmail)</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                value="ana.torres@gmail.com"
+                disabled
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="999 999 999"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="distrito">Distrito</label>
+              <select id="distrito" name="distrito">
+                <option value="">Selecciona un distrito</option>
+                <option value="san_isidro">San Isidro</option>
+                <option value="miraflores">Miraflores</option>
+                <option value="lince">Lince</option>
+                <option value="barranco">Barranco</option>
+                <option value="san_borja">San Borja</option>
+              </select>
+            </div>
+
+            <!-- Escenario 2: Datos inválidos -->
+            <div class="msg error" id="msgProfileError">
+              Por favor completa los campos obligatorios correctamente.
+            </div>
+
+            <!-- Escenario 1: Actualización exitosa -->
+            <div class="msg success" id="msgProfileSuccess">
+              Perfil actualizado correctamente.
+            </div>
+
+            <button type="submit" class="save-btn">Guardar cambios</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("ciudadano");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+        // Rellena el correo real de la sesión en lugar del valor fijo de ejemplo
+        document.getElementById("correo").value = session.correo;
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/perfil.js"></script>
+  </body>
+</html>

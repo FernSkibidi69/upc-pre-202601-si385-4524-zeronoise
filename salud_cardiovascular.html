@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Salud cardiovascular</title>
+    <link rel="stylesheet" href="css/salud_cardiovascular.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Ciudadano</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-ciudadano.html#sec-medir" class="side-link">
+          <span class="icon">🎙️</span> Medición
+        </a>
+        <a href="index-ciudadano.html#sec-mapa" class="side-link">
+          <span class="icon">🗺️</span> Mapa
+        </a>
+        <a href="index-ciudadano.html#sec-reportes" class="side-link">
+          <span class="icon">📋</span> Reportes
+        </a>
+        <a href="index-ciudadano.html#sec-historial" class="side-link">
+          <span class="icon">🕓</span> Historial
+        </a>
+        <a href="index-ciudadano.html#sec-perfil" class="side-link">
+          <span class="icon">👤</span> Perfil
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Salud cardiovascular</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Hola, <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <!-- Escenario 1: Primera vez en zona roja (modal automático) -->
+        <div class="modal-overlay" id="firstTimeModal">
+          <div class="modal-card">
+            <span class="modal-icon">❤️</span>
+            <h3>Cuida tu corazón</h3>
+            <p>
+              El ruido extremo aumenta el riesgo de hipertensión. Acabas de
+              registrar un nivel superior a 65 dB.
+            </p>
+            <button class="modal-btn" onclick="closeModal()">Entendido</button>
+          </div>
+        </div>
+
+        <div class="health-container">
+          <h2>Salud</h2>
+          <p class="subtitle">
+            Conoce cómo el ruido crónico afecta tu salud cardiovascular.
+          </p>
+
+          <!-- Escenario 2: Consulta voluntaria -->
+          <button class="topic-card" onclick="openArticle()">
+            <span class="topic-icon">🫀</span>
+            <div>
+              <div class="topic-title">Efectos cardiovasculares</div>
+              <div class="topic-hint">Artículo corto con fuentes de la OMS</div>
+            </div>
+            <span class="chevron">›</span>
+          </button>
+
+          <div class="article-box" id="articleBox">
+            <h3>El ruido y tu corazón</h3>
+            <p>
+              La exposición prolongada a niveles de ruido superiores a 65 dB se
+              asocia con un mayor riesgo de hipertensión arterial y enfermedades
+              cardiovasculares, según información divulgada por la Organización
+              Mundial de la Salud.
+            </p>
+            <p>
+              El estrés generado por el ruido constante puede elevar la
+              frecuencia cardíaca y los niveles de cortisol en el cuerpo,
+              afectando el descanso y la salud general a largo plazo.
+            </p>
+            <p class="source-note">
+              Fuente: Organización Mundial de la Salud (OMS)
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("ciudadano");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/salud_cardiovascular.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Mapa de incidencias</title>
+    <link rel="stylesheet" href="css/mapa_incidencias.css" />
+    <link rel="stylesheet" href="css/sidebar_global.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
+      </div>
+      <div class="sidebar-role">Panel Municipal</div>
+
+      <nav class="sidebar-nav">
+        <a href="index-municipalidad.html#sec-fiscalizacion" class="side-link">
+          <span class="icon">🚨</span> Fiscalización
+        </a>
+        <a href="index-municipalidad.html#sec-analitica" class="side-link">
+          <span class="icon">📊</span> Analítica
+        </a>
+        <a href="index-municipalidad.html#sec-administracion" class="side-link">
+          <span class="icon">⚙️</span> Administración
+        </a>
+        <a href="index-municipalidad.html#sec-comunicacion" class="side-link">
+          <span class="icon">💬</span> Comunicación
+        </a>
+      </nav>
+
+      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="topbar-title">Mapa de incidencias</h1>
+        <div class="topbar-user">
+          <span class="user-greeting"
+            >Funcionario: <strong id="userNombre">Usuario</strong></span
+          >
+          <div class="user-avatar" id="userAvatar">--</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="incidents-container">
+          <h2>Mapa de fiscalización</h2>
+          <p class="subtitle">
+            Incidencias reportadas por ciudadanos en tu distrito.
+          </p>
+
+          <!-- Escenario 2: Filtro por antigüedad -->
+          <div class="filter-row">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="filterOldToggle"
+                onchange="applyFilter()"
+              />
+              Solo incidencias con más de 7 días
+            </label>
+          </div>
+
+          <!-- Escenario 1: Incidencias pendientes (rojo) / atendidas (verde) -->
+          <div class="map-wrapper">
+            <svg
+              id="incidentsMap"
+              viewBox="0 0 400 260"
+              xmlns="http://www.w3.org/2000/svg"
+            ></svg>
+          </div>
+
+          <div class="legend-row">
+            <div class="legend-item">
+              <span class="dot rojo"></span> No atendido
+            </div>
+            <div class="legend-item">
+              <span class="dot verde"></span> Atendido
+            </div>
+          </div>
+
+          <div class="incidents-list" id="incidentsList"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      const session = requireRole("funcionario");
+      if (session) {
+        document.getElementById("userNombre").textContent = session.nombre;
+        document.getElementById("userAvatar").textContent = getIniciales(
+          session.nombre
+        );
+      }
+    </script>
+    <script src="js/sidebar_global.js"></script>
+    <script src="js/mapa_incidencias.js"></script>
+  </body>
+</html>
