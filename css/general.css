@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 :root {
   --azul: #2980b9;
   --azul-oscuro: #1a5276;
@@ -442,9 +441,6 @@ body {
 .main-footer {
   background: var(--footer);
   color: var(--blanco);
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
 }
 
 .footer-content {
