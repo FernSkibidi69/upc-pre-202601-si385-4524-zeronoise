@@ -1,0 +1,152 @@
+.sec-interaccion {
+  background-color: #f4f8fb;
+  padding: 70px 40px;
+}
+.div-gral-interaccion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.interaccion-texto {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.interaccion-texto h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.interaccion-texto p {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.publicaciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.publicacion-item {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 5px solid #1a5276;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.publicacion-item:hover {
+  transform: translateY(-2px);
+}
+.publicacion-item h4 {
+  color: #1a5276;
+  margin: 0 0 6px;
+}
+.publicacion-item p {
+  color: #34495e;
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+.publicacion-item span {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.detalle-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid #d6eaf8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.detalle-header h4 {
+  color: #1a5276;
+  margin: 0;
+}
+.cerrar-detalle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #999;
+  cursor: pointer;
+}
+.detalle-card > p {
+  color: #34495e;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.detalle-meta {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.detalle-meta div {
+  flex: 1;
+  background-color: #ebf5fb;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.detalle-meta span {
+  display: block;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+}
+.detalle-meta strong {
+  color: #1a5276;
+}
+
+.detalle-acciones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.btn-evidencia-mini,
+.btn-reportar-mini {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.btn-evidencia-mini {
+  background-color: #ebf5fb;
+  color: #1a5276;
+  border: 1px solid #1a5276;
+}
+.btn-evidencia-mini:hover {
+  background-color: #1a5276;
+  color: #fff;
+}
+.btn-reportar-mini {
+  background-color: #c0392b;
+  color: #fff;
+}
+.btn-reportar-mini:hover {
+  background-color: #a93226;
+}
+
+.mensaje-confirmacion {
+  display: none;
+  color: #27ae60;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #d5f5e3;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.mensaje-confirmacion.show {
+  display: block;
+}

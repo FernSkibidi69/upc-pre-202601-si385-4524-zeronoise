@@ -1,0 +1,313 @@
+.simulador {
+  padding: 70px 40px;
+}
+.simulador h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.simulador-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.medidor-wrapper {
+  background: #d4e6f1;
+  padding: 25px;
+  border: 2px solid #85c1e9;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+.medidor-visual {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.medidor-barra {
+  width: 100%;
+  height: 30px;
+  background: #ecf0f1;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 2px solid #bdc3c7;
+}
+.medidor-nivel {
+  height: 100%;
+  border-radius: 13px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+.medidor-valor {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #1a5276;
+  margin: 10px 0;
+}
+.medidor-estado {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 8px;
+  background: #ebf5fb;
+  border-radius: 5px;
+}
+.medidor-controles {
+  margin-top: 20px;
+  text-align: center;
+}
+.btn-medir {
+  background: #5dade2;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+.btn-medir:hover {
+  background: #3498db;
+  transform: scale(1.05);
+}
+.btn-stop {
+  background: #ec7063;
+}
+.btn-stop:hover {
+  background: #e74c3c;
+}
+.medidor-historial {
+  margin-top: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+.medidor-historial ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.medidor-historial li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 0.9em;
+  color: #2c3e50;
+}
+
+.medidor-info {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+}
+.info-card {
+  background: #d4e6f1;
+  padding: 20px;
+  border: 2px solid #85c1e9;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.info-card h4 {
+  color: #1a5276;
+  margin-top: 0;
+  border-bottom: 2px solid #5dade2;
+  padding-bottom: 8px;
+}
+
+.escala-colores {
+  margin-top: 30px;
+  background-color: #f4f8fb;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #d6eaf8;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.escala-colores h3 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.escala-colores > p {
+  color: #34495e;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.escala-lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.escala-item {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 6px solid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+.escala-item h4 {
+  margin: 0 0 5px;
+  color: #1f2937;
+}
+.escala-item p {
+  margin: 0;
+  color: #566573;
+  font-size: 0.9rem;
+}
+.circulo-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.escala-baja {
+  border-left-color: #27ae60;
+}
+.escala-baja .circulo-color {
+  background-color: #27ae60;
+}
+.escala-moderada {
+  border-left-color: #f1c40f;
+}
+.escala-moderada .circulo-color {
+  background-color: #f1c40f;
+}
+.escala-alta {
+  border-left-color: #e67e22;
+}
+.escala-alta .circulo-color {
+  background-color: #e67e22;
+}
+.escala-critica {
+  border-left-color: #c0392b;
+}
+.escala-critica .circulo-color {
+  background-color: #c0392b;
+}
+
+/* HU07 - Medición continua en movimiento */
+.sec-medicion-movimiento {
+  background-color: #ffffff;
+  padding: 70px 40px;
+}
+.div-gral-medicion-movimiento {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.medicion-movimiento-texto {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.medicion-movimiento-texto h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.medicion-movimiento-texto p {
+  color: #34495e;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.medicion-movimiento-contenido {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+.medicion-panel {
+  background-color: #1a5276;
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  flex: 1;
+}
+.medicion-panel h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.estado-medicion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.estado-medicion p {
+  margin: 0;
+}
+.punto-activo {
+  width: 14px;
+  height: 14px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dato-medicion {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 0;
+}
+.dato-medicion span {
+  color: #d6eaf8;
+}
+.estado-alerta {
+  color: #f7dc6f;
+}
+.medicion-cards {
+  flex: 2;
+  display: flex;
+  gap: 20px;
+}
+.medicion-card {
+  background-color: #f4f8fb;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+.medicion-card h3 {
+  color: #1a5276;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.medicion-card p {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .escala-lista {
+    grid-template-columns: 1fr;
+  }
+  .medicion-movimiento-contenido {
+    flex-direction: column;
+  }
+  .medicion-cards {
+    flex-direction: column;
+  }
+}
+
+.aviso-bateria {
+  margin-top: 15px;
+  background-color: rgba(236, 112, 99, 0.25);
+  border: 1px solid #ec7063;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,123 @@
+.sec-evidencia {
+  background-color: #ffffff;
+  padding: 70px 40px;
+}
+.div-gral-evidencia {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.evidencia-texto {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.evidencia-texto h2 {
+  color: #1a5276;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.evidencia-texto p {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.evidencia-card {
+  background-color: #f4f8fb;
+  padding: 28px;
+  border-radius: 12px;
+  border: 2px solid #d6eaf8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.campo-reporte {
+  margin-bottom: 20px;
+}
+.campo-reporte label {
+  display: block;
+  color: #1a5276;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.campo-reporte input[type="file"] {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #aed6f1;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.opciones-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.btn-evidencia {
+  flex: 1;
+  background-color: #1a5276;
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-evidencia:hover {
+  background-color: #2e86c1;
+}
+
+.attachment-preview {
+  display: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  border-left: 5px solid #27ae60;
+}
+.attachment-preview.show {
+  display: block;
+}
+.attachment-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.attachment-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: #d6eaf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.attachment-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a5276;
+}
+.attachment-meta {
+  font-size: 0.8rem;
+  color: #566573;
+  margin-top: 2px;
+}
+.attachment-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background: #d5f5e3;
+  color: #27ae60;
+}
+.db-extract {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .opciones-row {
+    flex-direction: column;
+  }
+}
