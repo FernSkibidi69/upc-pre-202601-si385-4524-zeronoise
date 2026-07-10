@@ -6,12 +6,14 @@
     <title>NoiseGuard - Panel del ciudadano</title>
     <link rel="stylesheet" href="css/ciudadano.css" />
   </head>
+
   <body>
     <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
         <img src="images/logo.png" alt="NoiseGuard" class="brand-logo" />
       </div>
+
       <div class="sidebar-role">Panel Ciudadano</div>
 
       <nav class="sidebar-nav">
@@ -22,47 +24,61 @@
         <a href="#sec-perfil" class="side-link">👤 Perfil</a>
       </nav>
 
-      <a href="cerrar_sesion.html" class="sidebar-logout">🚪 Cerrar sesión</a>
+      <a
+        href="iniciar_sesion.html"
+        class="sidebar-logout"
+        onclick="cerrarSesion(event)"
+      >
+        🚪 Cerrar sesión
+      </a>
     </aside>
 
     <!-- ===== CONTENIDO PRINCIPAL ===== -->
     <div class="main-area">
       <header class="topbar">
         <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
         <h1 class="topbar-title">Panel del ciudadano</h1>
+
         <div class="topbar-user">
-          <span class="user-greeting"
-            >Hola, <strong id="userNombre">Usuario</strong></span
-          >
+          <span class="user-greeting">
+            Hola, <strong id="userNombre">Usuario</strong>
+          </span>
+
           <div class="user-avatar" id="userAvatar">--</div>
         </div>
       </header>
 
-      <!-- ===== NIVEL ACTUAL (banner rápido) ===== -->
+      <!-- ===== NIVEL ACTUAL ===== -->
       <div class="quick-status">
         <div class="status-info">
           <span class="status-label">Nivel de ruido actual en tu zona</span>
           <span class="status-db">62 dB</span>
         </div>
+
         <span class="status-badge moderado">Moderado</span>
+
         <a href="medicion.html" class="btn-measure">Medir ahora</a>
       </div>
 
       <main class="content">
-        <!-- MEDICIÓN -->
+        <!-- ===== MEDICIÓN ===== -->
         <section class="group" id="sec-medir">
           <h2 class="group-title">🎙️ Medición</h2>
+
           <div class="cards-grid">
             <a href="medicion.html" class="launch-card">
               <div class="card-icon">🎙️</div>
               <strong>Medición instantánea</strong>
               <p>Mide el ruido de tu entorno con un solo botón.</p>
             </a>
+
             <a href="indicador_color.html" class="launch-card">
               <div class="card-icon">🟢</div>
               <strong>Indicador por colores</strong>
               <p>Entiende la peligrosidad sin leer números.</p>
             </a>
+
             <a href="notificacion_limite.html" class="launch-card">
               <div class="card-icon">🔔</div>
               <strong>Alertas de límite</strong>
@@ -71,25 +87,29 @@
           </div>
         </section>
 
-        <!-- MAPA -->
+        <!-- ===== MAPA ===== -->
         <section class="group" id="sec-mapa">
           <h2 class="group-title">🗺️ Mapa</h2>
+
           <div class="cards-grid">
             <a href="mapa_colaborativo.html" class="launch-card">
               <div class="card-icon">🌐</div>
               <strong>Mapa colaborativo</strong>
               <p>Publicaciones de ruido de otros vecinos.</p>
             </a>
+
             <a href="interaccion_mapa.html" class="launch-card">
               <div class="card-icon">📌</div>
               <strong>Publicaciones del mapa</strong>
               <p>Consulta el detalle de cada marcador.</p>
             </a>
+
             <a href="zonas_silenciosas.html" class="launch-card">
               <div class="card-icon">🌳</div>
               <strong>Zonas silenciosas</strong>
               <p>Marca y encuentra espacios de descanso auditivo.</p>
             </a>
+
             <a href="mapa_criticos.html" class="launch-card">
               <div class="card-icon">🚩</div>
               <strong>Puntos críticos</strong>
@@ -98,20 +118,23 @@
           </div>
         </section>
 
-        <!-- REPORTES -->
+        <!-- ===== REPORTES ===== -->
         <section class="group" id="sec-reportes">
           <h2 class="group-title">📋 Reportes</h2>
+
           <div class="cards-grid">
             <a href="evidencia_audiovisual.html" class="launch-card">
               <div class="card-icon">📷</div>
               <strong>Evidencia audiovisual</strong>
               <p>Adjunta fotos o videos de la fuente de ruido.</p>
             </a>
+
             <a href="enviar_incidencia.html" class="launch-card">
               <div class="card-icon">📤</div>
               <strong>Enviar incidencia</strong>
               <p>Reporta directamente a la municipalidad.</p>
             </a>
+
             <a href="seguimiento_reporte.html" class="launch-card">
               <div class="card-icon">🔍</div>
               <strong>Seguimiento</strong>
@@ -120,25 +143,29 @@
           </div>
         </section>
 
-        <!-- HISTORIAL -->
+        <!-- ===== HISTORIAL ===== -->
         <section class="group" id="sec-historial">
           <h2 class="group-title">🕓 Historial</h2>
+
           <div class="cards-grid">
             <a href="grafico_24h.html" class="launch-card">
               <div class="card-icon">📊</div>
               <strong>Últimas 24 horas</strong>
               <p>Gráfico con los niveles de ruido del día.</p>
             </a>
+
             <a href="resumen_semanal.html" class="launch-card">
               <div class="card-icon">📅</div>
               <strong>Resumen semanal</strong>
               <p>Horas de exposición a ruido peligroso.</p>
             </a>
+
             <a href="limite_legal.html" class="launch-card">
               <div class="card-icon">⚖️</div>
               <strong>Límite legal</strong>
               <p>Compara tus mediciones con la norma de tu zona.</p>
             </a>
+
             <a href="salud_cardiovascular.html" class="launch-card">
               <div class="card-icon">❤️</div>
               <strong>Salud</strong>
@@ -147,15 +174,17 @@
           </div>
         </section>
 
-        <!-- PERFIL -->
+        <!-- ===== PERFIL ===== -->
         <section class="group" id="sec-perfil">
           <h2 class="group-title">👤 Perfil y ajustes</h2>
+
           <div class="cards-grid">
             <a href="perfil.html" class="launch-card">
               <div class="card-icon">✏️</div>
               <strong>Mi perfil</strong>
               <p>Edita tus datos personales y preferencias.</p>
             </a>
+
             <a href="config_preferencial.html" class="launch-card">
               <div class="card-icon">🎚️</div>
               <strong>Límites personales</strong>
@@ -166,16 +195,29 @@
       </main>
     </div>
 
+    <!-- ===== SCRIPTS ===== -->
     <script src="js/auth.js"></script>
+
     <script>
+      function cerrarSesion(event) {
+        event.preventDefault();
+
+        clearSession();
+
+        window.location.replace("iniciar_sesion.html");
+      }
+
       const session = requireRole("ciudadano");
+
       if (session) {
         document.getElementById("userNombre").textContent = session.nombre;
+
         document.getElementById("userAvatar").textContent = getIniciales(
           session.nombre
         );
       }
     </script>
+
     <script src="js/ciudadano.js"></script>
   </body>
 </html>
