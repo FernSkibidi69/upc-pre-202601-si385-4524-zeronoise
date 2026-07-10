@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Seguimiento de reportes</title>
+    <link rel="stylesheet" href="css/seguimiento_reporte.css" />
+  </head>
+  <body>
+    <section class="sec-seguimiento">
+      <div class="div-gral-seguimiento">
+        <div class="seguimiento-texto">
+          <h2>Mis reportes</h2>
+          <p>
+            Consulta el estado de tus reportes enviados a la municipalidad y
+            recibe actualizaciones sobre su avance.
+          </p>
+        </div>
+
+        <div class="reportes-recientes seguimiento-lista">
+          <div id="listaSeguimiento"></div>
+
+          <div class="estado-info">
+            <h4>Estados del reporte</h4>
+            <p>
+              <span class="punto pendiente"></span> Pendiente: reporte recibido.
+            </p>
+            <p>
+              <span class="punto revision"></span> En revisión: reporte
+              evaluado.
+            </p>
+            <p>
+              <span class="punto atendido"></span> Atendido: caso gestionado.
+            </p>
+          </div>
+        </div>
+
+        <!-- Escenario 2: notificación de actualización -->
+        <div class="notif-toast" id="notifToast">
+          🔔 Tu reporte de "Av. Principal" fue atendido por la municipalidad.
+        </div>
+      </div>
+    </section>
+
+    <script src="js/seguimiento_reporte.js"></script>
+  </body>
+</html>

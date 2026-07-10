@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Tablero por distrito</title>
+    <link rel="stylesheet" href="css/tablero_distrito.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <div class="logo">🔊 NoiseGuard</div>
+      <h2>Tablero de niveles de ruido</h2>
+      <p class="subtitle">Distrito de Lima - Vista por cuadras</p>
+
+      <div class="controls-row">
+        <button
+          class="view-toggle active"
+          id="btnBlocks"
+          onclick="setView('blocks')"
+        >
+          Vista por cuadras
+        </button>
+        <button
+          class="view-toggle"
+          id="btnRanking"
+          onclick="setView('ranking')"
+        >
+          Puntos críticos
+        </button>
+      </div>
+
+      <!-- Escenario 1: Calor por cuadras -->
+      <div class="view-panel show" id="blocksView">
+        <div class="map-wrapper">
+          <svg
+            id="blocksMap"
+            viewBox="0 0 400 260"
+            xmlns="http://www.w3.org/2000/svg"
+          ></svg>
+        </div>
+        <div class="legend-row">
+          <div class="legend-item"><span class="dot verde"></span> Bajo</div>
+          <div class="legend-item">
+            <span class="dot amarillo"></span> Moderado
+          </div>
+          <div class="legend-item"><span class="dot naranja"></span> Alto</div>
+          <div class="legend-item"><span class="dot rojo"></span> Muy alto</div>
+        </div>
+      </div>
+
+      <!-- Escenario 2: Ranking de puntos críticos -->
+      <div class="view-panel" id="rankingView">
+        <div class="ranking-list" id="rankingList"></div>
+      </div>
+    </div>
+
+    <script src="js/tablero_distrito.js"></script>
+  </body>
+</html>

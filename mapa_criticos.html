@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Mapa de puntos críticos</title>
+    <link rel="stylesheet" href="css/mapa_criticos.css" />
+  </head>
+  <body>
+    <div class="map-container">
+      <div class="logo">🔊 NoiseGuard</div>
+      <h2>Mapa de puntos críticos</h2>
+      <p class="subtitle">
+        Zonas donde te expusiste a ruido peligroso durante tus caminatas.
+      </p>
+
+      <!-- Filtro por fecha (Escenario 2) -->
+      <div class="filter-row">
+        <label for="dateFilter">Filtrar por día</label>
+        <select id="dateFilter" onchange="filterByDate()">
+          <option value="all">Toda la semana</option>
+          <option value="lunes">Lunes</option>
+          <option value="martes">Martes</option>
+          <option value="miercoles">Miércoles</option>
+          <option value="jueves">Jueves</option>
+          <option value="viernes">Viernes</option>
+        </select>
+      </div>
+
+      <!-- Mapa simulado con segmentos de ruta -->
+      <div class="map-wrapper">
+        <svg
+          id="routeMap"
+          viewBox="0 0 400 300"
+          xmlns="http://www.w3.org/2000/svg"
+        ></svg>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-item"><span class="dot verde"></span> Bajo</div>
+        <div class="legend-item">
+          <span class="dot amarillo"></span> Moderado
+        </div>
+        <div class="legend-item"><span class="dot naranja"></span> Alto</div>
+        <div class="legend-item">
+          <span class="dot rojo"></span> &gt;80 dB (Crítico)
+        </div>
+      </div>
+
+      <div class="segments-list" id="segmentsList"></div>
+    </div>
+
+    <script src="js/mapa_criticos.js"></script>
+  </body>
+</html>
