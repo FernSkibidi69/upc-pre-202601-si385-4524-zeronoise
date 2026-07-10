@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoiseGuard - Asignación de roles</title>
+    <link rel="stylesheet" href="css/asignacion_roles.css" />
+  </head>
+  <body>
+    <div class="roles-container">
+      <div class="logo">🔊 NoiseGuard</div>
+      <h2>Gestión de usuarios</h2>
+      <p class="subtitle">Asigna roles a los funcionarios municipales.</p>
+
+      <div class="users-list" id="usersList"></div>
+
+      <!-- Panel de asignación -->
+      <div class="assign-panel" id="assignPanel">
+        <div class="panel-header">
+          <span id="selectedUserName">--</span>
+          <button class="close-btn" onclick="closePanel()">✕</button>
+        </div>
+
+        <div class="form-group">
+          <label for="roleSelect">Rol a asignar</label>
+          <select id="roleSelect">
+            <option value="">Selecciona un rol</option>
+            <option value="inspector">Inspector de campo</option>
+            <option value="analista">Analista de datos</option>
+            <option value="jefe">Jefe de fiscalización</option>
+          </select>
+        </div>
+
+        <!-- Escenario 2: Asignación fallida -->
+        <div class="msg error" id="msgRoleError">
+          Debes seleccionar un rol válido para poder completar la asignación.
+        </div>
+
+        <!-- Escenario 1: Asignación exitosa -->
+        <div class="msg success" id="msgRoleSuccess">
+          Rol asignado correctamente. El funcionario ahora accede solo a las
+          funciones de su rol.
+        </div>
+
+        <button class="assign-btn" onclick="assignRole()">Asignar rol</button>
+      </div>
+    </div>
+
+    <script src="js/asignacion_roles.js"></script>
+  </body>
+</html>
