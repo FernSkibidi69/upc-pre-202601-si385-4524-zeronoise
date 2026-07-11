@@ -18,7 +18,7 @@ Segmentos Objetivos
 - Startups: Empresas emergentes que necesitan presencia digital profesional
 - Profesionales independientes: Freelancers que buscan mostrar sus servicios
 
-Características Principales
+Características Principaless
 -  Diseño responsive adaptable a dispositivos móviles
 -  Formulario de contacto integrado
 -  Sección de testimonios de usuarios
